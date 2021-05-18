@@ -96,21 +96,31 @@
         <p>你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的<a target="_blank" rel="noopener" href="https://github.com/zhangdongwei1998">GitHub</a>主页。</p>
 <h2 id="简单搭建博客"><a href="#简单搭建博客" class="headerlink" title="简单搭建博客"></a>简单搭建博客</h2><p>这是我第一篇博客，不知道写些什么，那就写一下我搭建博客的过程吧。我参考了 B 站的视频和网上的一些教程，如果不正确请参考一下其他教程。</p>
 <h3 id="第一步：下载-git-和-Node"><a href="#第一步：下载-git-和-Node" class="headerlink" title="第一步：下载 git 和 Node"></a>第一步：下载 git 和 Node</h3><p>git 下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a><br>node 下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-<p>当在命令窗口输入：git –version 时，可查看 git 的版本，如果显示版本号，则 git 安装成功。如下：<br><img src="./picture/2021518/git.png" alt="avatar"></p>
-<p>当在命令窗口输入：node -v 时，可查看 node 的版本，如果显示版本号，则 node 安装成功。如下：<br><img src="./picture/2021518/node.png" alt="avatar"></p>
-<p>安装过程很简单，几乎只一直点击 next 即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>当在命令窗口输入：git –version 时，可查看 git 的版本，如果显示版本号，则 git 安装成功。如下：<br><img src="./picture/2021518/git.png" alt="avatar"><br>当在命令窗口输入：node -v 时，可查看 node 的版本，如果显示版本号，则 node 安装成功。如下：<br><img src="./picture/2021518/node.png" alt="avatar"><br>安装过程很简单，几乎只一直点击 next 即可。</p>
+<h3 id="第二步：下载-Hexo"><a href="#第二步：下载-Hexo" class="headerlink" title="第二步：下载 Hexo"></a>第二步：下载 Hexo</h3><p>Hexo 官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br>安装：<br>使用 npm 命令安装 Hexo.在任意位置鼠标右键，选择“Git Bash Here”,打开 git 控制台，输入命令安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>配置：<br>新建博客文件夹，在该文件夹下打开命令窗口，输入一下命令进行初始化配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="第三步：本地启动-Hexo"><a href="#第三步：本地启动-Hexo" class="headerlink" title="第三步：本地启动 Hexo"></a>第三步：本地启动 Hexo</h3><p>1.输入以下命令进行生成博客。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p><img src="./picture/2021518/hexog.png" alt="avatar"> 2.启动本地服务器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><img src="./picture/2021518/hexos.png" alt="avatar"><br>本地服务器默认端口为 4000，则输入：<a target="_blank" rel="noopener" href="http://localhost:4000/;%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E3%80%82%E6%98%BE%E7%A4%BA%E5%A6%82%E4%B8%8B%EF%BC%9A">http://localhost:4000/;即可看到博客主页。显示如下：</a><br><img src="./picture/2021518/blog1.png" alt="avatar"><br>做到以上结果说明你已经完成了一半了，接下来就需要将自己的博客部署到 Github 上了。</p>
+<h3 id="第四步：部署到-Github-上。"><a href="#第四步：部署到-Github-上。" class="headerlink" title="第四步：部署到 Github 上。"></a>第四步：部署到 Github 上。</h3><p>1、申请一个 Github 账号。<br>2、创建一个仓库。<br><img src="./picture/2021518/github1.png" alt="avatar"><br>3、在_config.yml 进行配置。<br><img src="./picture/2021518/config1.png" alt="avatar"><br>repo: 后面是你刚才创建 github 的仓库地址。<br>注意 type：和 repo:的冒号后面要加引号。</p>
+<p><img src="./picture/2021518/config.png" alt="avatar"><br>url: 后面是生成的域名 url，部署后只需在浏览器输入该地址即可访问博客。<br>4、安装 hexo-deployer-git 自动部署发布工具。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>5、发布到 github 上。<br>在将博客部署到 github 上之前，你还需要将 SSH Key 添加到 GitHub，该步骤较简单，可参考其他教程。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>在部署的时候需要输入你的 github 账号和密码，请正确输入：<br><img src="./picture/2021518/login.png" alt="avatar"><br>部署过程很快，几秒钟即可部署完成。<br><img src="./picture/2021518/deploy.png" alt="avatar"><br>6、测试访问。<br>在浏览器输入：<a href="https://zhangdongwei1998.github.io/%E5%8D%B3%E5%8F%AF%E8%AE%BF%E9%97%AE%E5%8D%9A%E5%AE%A2%E4%BA%86%E3%80%82">https://zhangdongwei1998.github.io/即可访问博客了。</a><br><img src="./picture/2021518/test.png" alt="avatar"></p>
+<h3 id="第五步：写博客。"><a href="#第五步：写博客。" class="headerlink" title="第五步：写博客。"></a>第五步：写博客。</h3><p>如果你想写更多博客，则需要在\Hexo\source_posts 文件夹下，新建 markdown 文件就可以写文章了。以后写文章只需要保存、生成、部署即可部署到 github 上了。</p>
+<h3 id="第六步：参考博客。"><a href="#第六步：参考博客。" class="headerlink" title="第六步：参考博客。"></a>第六步：参考博客。</h3><p>1、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/189fd945f38f">https://www.jianshu.com/p/189fd945f38f</a><br>2、<a target="_blank" rel="noopener" href="https://blog.csdn.net/linton1/article/details/90137367">https://blog.csdn.net/linton1/article/details/90137367</a></p>
+<h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
 
       
     </div>
