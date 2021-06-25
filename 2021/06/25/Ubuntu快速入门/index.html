@@ -18,7 +18,7 @@
 <meta property="og:description" content="你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的GitHub主页。 Ubuntu快速入门最近比较无聊，闲来无事从B站看了一个关于Ubuntu的教程，地址为：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1na4y1773c?p&#x3D;1，只是一个简单的入门教程，感觉挺不错的，能够快速上手，记录一下一些命令，防止以后">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-25T06:42:11.318Z">
-<meta property="article:modified_time" content="2021-06-25T09:12:22.593Z">
+<meta property="article:modified_time" content="2021-06-25T09:14:30.695Z">
 <meta property="article:author" content="zdw">
 <meta name="twitter:card" content="summary">
   
@@ -710,7 +710,19 @@
 <p>startup.sh<br>shutdown.sh<br>catalina.sh<br>实际上，startup.sh 和 shutdown.sh 的内部，都是调用了catalina.sh </p>
 </blockquote>
 <p>步骤：</p>
-<p>创建一个脚本 run_tomcat.sh<br>以后台方式运行服务<br>./run_tomcat.sh start<br>停止服务<br>./run_tomcat.sh stop<br>在前台方式运行 (当前窗口运行,方便打印调试 )<br>./run_tomcat.sh run<br>其中，参数 start / stop / run 会间接地传给 catalina.sh</p>
+<p>创建一个脚本 run_tomcat.sh<br>以后台方式运行服务</p>
+<blockquote>
+<p>./run_tomcat.sh start  </p>
+</blockquote>
+<p>停止服务</p>
+<blockquote>
+<p>./run_tomcat.sh stop</p>
+</blockquote>
+<p>在前台方式运行 (当前窗口运行,方便打印调试 )</p>
+<blockquote>
+<p>./run_tomcat.sh run  </p>
+</blockquote>
+<p>其中，参数 start / stop / run 会间接地传给 catalina.sh</p>
 <h3 id="第十六章-进程管理"><a href="#第十六章-进程管理" class="headerlink" title="第十六章 进程管理"></a>第十六章 进程管理</h3><h4 id="16-1-程序与进程"><a href="#16-1-程序与进程" class="headerlink" title="16.1 程序与进程"></a>16.1 程序与进程</h4><p>程序 Program：指一个程序文件，如 notepad.exe<br>进程 Process：当一个程序运行起来，在操作系统内创建一条记录，用于描述和控制它的运行<br>演示：运行多个 /usr/bin/vim，并观察进程信息<br>    ps -ef<br>其中，各个字段的含义：</p>
 <blockquote>
 <p>UID : 执行者<br>PID :  进程ID<br>PPID :   父进程ID<br>STIME :   启动时间<br>CMD :   启动时调用的命令行</p>
