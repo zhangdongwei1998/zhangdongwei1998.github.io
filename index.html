@@ -214,6 +214,131 @@
             
 
   
+    <article id="post-Ubuntu快速入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/06/25/Ubuntu%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" target="_blank">Ubuntu快速入门</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/06/25/Ubuntu%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="archive-article-date">
+        <time datetime="2021-06-25T06:42:11.318Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的<a target="_blank" rel="noopener" href="https://github.com/zhangdongwei1998">GitHub</a>主页。</p>
+<h2 id="Ubuntu快速入门"><a href="#Ubuntu快速入门" class="headerlink" title="Ubuntu快速入门"></a>Ubuntu快速入门</h2><p>最近比较无聊，闲来无事从B站看了一个关于Ubuntu的教程，地址为：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1na4y1773c?p=1">https://www.bilibili.com/video/BV1na4y1773c?p=1</a>，只是一个简单的入门教程，感觉挺不错的，能够快速上手，记录一下一些命令，防止以后忘记。</p>
+<h3 id="第一章：Ubuntu介绍和课程内容"><a href="#第一章：Ubuntu介绍和课程内容" class="headerlink" title="第一章：Ubuntu介绍和课程内容"></a>第一章：Ubuntu介绍和课程内容</h3><h4 id="1-1-Ubuntu介绍"><a href="#1-1-Ubuntu介绍" class="headerlink" title="1.1 Ubuntu介绍"></a>1.1 Ubuntu介绍</h4><p>Ubuntu , 是一种操作系统的名字，一般称作 ‘乌班图’。</p>
+<p>Ubuntu官网地址：<a target="_blank" rel="noopener" href="https://ubuntu.com/">https://ubuntu.com/</a><br>Ubuntu中文地址：<a target="_blank" rel="noopener" href="https://cn.ubuntu.com/">https://cn.ubuntu.com/</a></p>
+<p>什么叫操作系统？<br>Windows , 用于个人桌面<br>MacOS , 用于个人桌面<br>Linux, 主要用于服务器，商业部署</p>
+<p>Linux又分为多种发行版，如 Ubuntu, CentOS, Redhat, Deepin 等。</p>
+<p>演示环境:<br>VMWare + Ubuntu 20.04<br>其中，20.04 表示2020年4月发布的版本</p>
+<h4 id="1-2-课程内容"><a href="#1-2-课程内容" class="headerlink" title="1.2 课程内容"></a>1.2 课程内容</h4><p>==课程内容==</p>
+<p>1 常用命令的使用 cd ls cp rm tar<br>2 文本的编辑 vi  gedit<br>3 用户及权限系统 chmod<br>4 SHELL脚本入门 .sh<br>5 常见的服务器 vsftpd<br>6 Java / Tomcat 运行环境的搭建等<br>7 其他软件的编译与安装 Redis</p>
+<p>==资源下载==</p>
+<p>PPT 、文档、软件均提供下载<br>官网  <a target="_blank" rel="noopener" href="http://afanihao.cn/">http://afanihao.cn</a></p>
+<h3 id="第二章：虚拟机"><a href="#第二章：虚拟机" class="headerlink" title="第二章：虚拟机"></a>第二章：虚拟机</h3><h4 id="2-1-创建虚拟机"><a href="#2-1-创建虚拟机" class="headerlink" title="2.1 创建虚拟机"></a>2.1 创建虚拟机</h4><p>有两种安装方式：<br>1 物理主机安装<br>准备一台电脑，刻录一张Ubuntu的光盘 ( DVD )。<br>2 虚拟主机安装<br>使用 VMWare / Virtual Box 软件，创建一台虚拟机。<br>本课程使用 VMWare 15 Pro 进行演示。</p>
+<p>创建虚拟机的硬件条件：<br>CPU :  i5 / i7 以上<br>内存 :  8G<br>硬盘 :  固态硬盘<br>如果配置太低，则在运行虚拟机时会比较卡顿</p>
+<p>一、VMware 15 Pro<br>参考其他文章或者文档，很简单。</p>
+<p>如果有安全卫士，请允许安装.<br>安装后将添加2个虚拟网卡 VMnet1, VMnet8.</p>
+<p>二、创建虚拟机<br>1 添加一个虚拟机<br>2 放在固态分区里<br>3 检查硬件配置<br>内存： 2G以上<br>CPU<br>网络：NAT</p>
+<h4 id="2-2-安装Ubuntu"><a href="#2-2-安装Ubuntu" class="headerlink" title="2.2 安装Ubuntu"></a>2.2 安装Ubuntu</h4><p>现在我们有两个主机：<br>宿主机：Windows 10<br>虚拟机：裸机，即将安装 Ubuntu 20.04 Desktop<br>其中，20.04 表示 2020年4月发布的版本，Desktop表示个人桌面版本</p>
+<p>安装Ubutun系统，请参考其他安装教程。<br>大致步骤如下：<br>一、下载Ubuntu的系统映射ISO<br>二、将光盘插入光驱<br>三、打开电源，开始安装。。<br>四、安装后的初始设置</p>
+<p>要点与细节：<br>1 宿主机必须保持联网<br>因为在安装的过程中，需要联网下载一些软件包<br>2 如果Ubuntu有问题，如何重装？<br>直接删除目录<br>虚拟机内的操作，不会影响到宿主机</p>
+<h4 id="2-3-启动与关闭"><a href="#2-3-启动与关闭" class="headerlink" title="2.3 启动与关闭"></a>2.3 启动与关闭</h4><p>虚拟机的几个基本操作：<br>1 打开虚拟机：文件 | 打开 ，也可从收藏夹里找到<br>2 启动虚拟机<br>3 关闭虚拟机：<br>     - 在系统中关闭<br>     - 强行关机<br>4 挂起 / 恢复：将当前状态冻结，以便快速恢复</p>
+<h4 id="2-4-虚拟机更多操作"><a href="#2-4-虚拟机更多操作" class="headerlink" title="2.4 虚拟机更多操作"></a>2.4 虚拟机更多操作</h4><p>1 电源<br>打开、关闭、挂起/恢复<br>2 设置<br>硬件参数设置<br>注意：先关机，再修改设置<br>3 状态栏<br>右下角一排状态按钮，表示硬件状态<br>4 全屏显示<br>进入全屏 , 退出全屏 , 隐藏/显示命令栏</p>
+<h4 id="2-5-快照与系统恢复"><a href="#2-5-快照与系统恢复" class="headerlink" title="2.5 快照与系统恢复"></a>2.5 快照与系统恢复</h4><p>系统玩坏了怎么办？<br>1 重装系统<br>2 使用系统快照</p>
+<h3 id="第三章：桌面"><a href="#第三章：桌面" class="headerlink" title="第三章：桌面"></a>第三章：桌面</h3><h4 id="3-1-桌面环境"><a href="#3-1-桌面环境" class="headerlink" title="3.1 桌面环境"></a>3.1 桌面环境</h4><p>Ubuntu 的桌面环境和 Windows  / Android 相似<br>上部：状态栏<br>左侧：收藏夹，常用的应用程序<br>左上角：查看正在活动的程序 Activities<br>左下角：查看所有的应用程序<br>右上角：系统状态、用户、系统设置、关机与注销</p>
+<p>演示：运行几个程序，试一下试。。<br>打开 Firefox<br>打开文件管理器<br>打开命令行终端<br>打开文本编辑器<br>显示所有的活动的程序，切换一下</p>
+<p>Ubuntu上可以个人办公吗？可以看视频、听音乐吗？<br>都可以，但不是我们的重点。</p>
+<p>Linux可以作为个人桌面，但主要用于服务器环境</p>
+<h4 id="3-2-收藏夹"><a href="#3-2-收藏夹" class="headerlink" title="3.2 收藏夹"></a>3.2 收藏夹</h4><p>收藏夹：收藏一些常用的程序<br>以下三个程序：<br>文件管理器<br>命令行终端<br>文本编辑器</p>
+<h3 id="第四章：文件系统"><a href="#第四章：文件系统" class="headerlink" title="第四章：文件系统"></a>第四章：文件系统</h3><h4 id="4-1-文件系统"><a href="#4-1-文件系统" class="headerlink" title="4.1 文件系统"></a>4.1 文件系统</h4><p>对于 Windows 来说，每一个分区有一个盘符<br>C:\ 通常存放操作系统和软件<br>D:\ , E:\ 存放用户的其他文件<br>比如，C:\example\123.jpg</p>
+<p>注意：每一个盘符实际对应一个分区 Partition<br>对于 Linux 来说，使用统一的目录树结构<br>/<br>/home/shaofa<br>/root<br>/bin<br>/mnt<br>/usr<br>/etc<br>注意：Linux下没有C: D: 这个盘符的概念</p>
+<h4 id="4-2-用户目录"><a href="#4-2-用户目录" class="headerlink" title="4.2 用户目录"></a>4.2 用户目录</h4><p>用户目录，就是用户自己的目录<br>用户zdw目录 /home/zdw<br>Linux系统每个用户一个目录 ，例如 /home/xiaoming<br>特例：超级用户 root ，其用户目录为 /root<br>权限机制：对于普通用户来说，他能操作的目录就只有用户目录。<br>root用户没有限制，可以操作任意文件和目录</p>
+<h4 id="4-3-创建目录和文件"><a href="#4-3-创建目录和文件" class="headerlink" title="4.3 创建目录和文件"></a>4.3 创建目录和文件</h4><p>目录操作： 创建目录 / 删除 / 重命名<br>文件操作： 编辑文本文件<br>以上所有的操作，都在用户目录下执行<br>/home/zdw</p>
+<h3 id="第五章：创建命令"><a href="#第五章：创建命令" class="headerlink" title="第五章：创建命令"></a>第五章：创建命令</h3><h4 id="5-1-文件列表"><a href="#5-1-文件列表" class="headerlink" title="5.1 文件列表"></a>5.1 文件列表</h4><p>本章介绍 Linux 下的常用命令，包括：<br>ls / cd / pwd / mkdir / rmdir / cp / rm / mv / tar / zip / unzip / ln …</p>
+<p>ls , 即 list, 列出目录下的所有项<br>以详细模式查看<br>ls   -l  /home/zdw<br>其中，-l 为参数，参数一般以 - 开头</p>
+<p>1 在输入命令和路径时，按 TAB 键可以自动补全<br>ls /ho -&gt; ls /home<br>2 输入历史可以翻阅<br>按 ↑ ↓ 箭头键可以上下翻阅<br>3 宿主机 与 虚拟机之间可以拷贝粘贴<br>一般情况下，文本和文件都可以拷贝</p>
+<h4 id="5-2-切换目录"><a href="#5-2-切换目录" class="headerlink" title="5.2 切换目录"></a>5.2 切换目录</h4><p>pwd , 即 print working directory 显示当前工作目录<br>cd , 即 change directory , 切换目录<br>示例：<br>切换到某个目录 cd /home/zdw/example</p>
+<p>几个特殊的目录：<br>~  代表当前用户的主目录<br>.   代表当前目录<br>..  代表上一级目录<br>cd ~  切换到主目录<br>cd ~/example 切换到主目录下的example目录<br>cd ../www  切换到上级目录、再到www子目录<br>在 ls 命令中，也可以使用 ~ . .. 表示的路径<br>ls ~<br>ls ./www</p>
+<p>还有更复杂的形式 ( 不要求掌握 )<br> ./hello/abc/../123/./other/test.xml<br>在命令行提示符里，会提示当前目录,当写出文件名称前几个单词只需要敲击tab键即可自动补全。</p>
+<h4 id="5-3-目录操作"><a href="#5-3-目录操作" class="headerlink" title="5.3 目录操作"></a>5.3 目录操作</h4><p>mkdir ，即 make directory 创建目录<br>mkdir  -p  abc/123/test<br>使用 -p 参数，可以将路径的层次目录全部创建<br>rmdir ，即 remove directory 删除空目录<br>如果目录非空，则删除失败</p>
+<p>rm ，即 remove 删除文件或者目录<br>rm -rf abc<br>删除abc目录，和子项一并删除<br>其中， r 表示 recursive , f 表示 force</p>
+<p>一个程序员界的玩笑： rm  -rf  /*    删库跑路？</p>
+<p>cp，即 copy 复制文件或者目录<br>cp -rf  example example2</p>
+<p>mv ，即 move ，移动文件或目录 (重命名)<br>move hello helloworld</p>
+<p>对于文件， rm / cp / mv 这三个命令同样适用</p>
+<h4 id="5-4-归档压缩"><a href="#5-4-归档压缩" class="headerlink" title="5.4 归档压缩"></a>5.4 归档压缩</h4><p>tar , 即 tape archive 档案打包<br>创建档案包<br>tar   -cvf   example.tar   example<br>其中，<br>   c ,   表示 create 创建档案<br>   v ,  表示 verbose 显示详情<br>   f ,   表示 file<br>也可以多个目录打包  tar -cvf  xxx.tar  file1  file2  file3</p>
+<p>还原档案包<br>tar   -xvf   example.tar<br>tar   -xvf   example.tar   -C   outdir<br>其中，-C 参数指定目标目录，默认解到当前目录下</p>
+<p>解压缩<br>先前的tar格式并没有压缩，体积较大<br>并档并压缩<br>tar   -zcvf   example.tar.gz   example<br>解压缩<br>tar   -zxvf   example.tar.gz<br>tar   -zxvf   example.tar.gz   -C   outdir<br>通常我们所见的，都是 *.tar.gz 这种格式</p>
+<h4 id="5-5-软连接"><a href="#5-5-软连接" class="headerlink" title="5.5 软连接"></a>5.5 软连接</h4><p>软链接，即 Windows 下的 “快捷方式”<br>使用 ln 命令 (link) 来创建软链接<br>ln  -s  source  link<br>其中，-s 表示 soft 软链接 ( 默认为硬 )<br>比如<br>ln  -s  example  example2</p>
+<p>软链接的特点：<br>1 删除软件接，对原文件没有影响<br>2 删除原文件，则软链接失效</p>
+<p>以 ls -l 查看文件详情时，可以看到目标路径<br>比如，ls -l /<br>可以发现，/bin 实际指向的是 /usr/bin 目录</p>
+<p>注意：除了软链接之外，还有一个为硬链接，不在本课程讲解</p>
+<h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/06/25/Ubuntu%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-typora" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
