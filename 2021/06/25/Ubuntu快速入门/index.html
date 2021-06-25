@@ -18,7 +18,7 @@
 <meta property="og:description" content="你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的GitHub主页。 Ubuntu快速入门最近比较无聊，闲来无事从B站看了一个关于Ubuntu的教程，地址为：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1na4y1773c?p&#x3D;1，只是一个简单的入门教程，感觉挺不错的，能够快速上手，记录一下一些命令，防止以后">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-25T06:42:11.318Z">
-<meta property="article:modified_time" content="2021-06-25T07:26:03.319Z">
+<meta property="article:modified_time" content="2021-06-25T08:11:17.763Z">
 <meta property="article:author" content="zdw">
 <meta name="twitter:card" content="summary">
   
@@ -244,7 +244,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.2k字</span>
+      <span class="post-count">6.3k字</span>
     </span>
   </span>
 
@@ -253,7 +253,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">8分</span>
+      <span class="post-count">24分</span>
     </span>
   </span>
 </div>
@@ -314,6 +314,103 @@
 <p>软链接的特点：<br>1 删除软件接，对原文件没有影响<br>2 删除原文件，则软链接失效</p>
 <p>以 ls -l 查看文件详情时，可以看到目标路径<br>比如，ls -l /<br>可以发现，/bin 实际指向的是 /usr/bin 目录</p>
 <p>注意：除了软链接之外，还有一个为硬链接，不在本课程讲解</p>
+<h3 id="第六章：用户和组"><a href="#第六章：用户和组" class="headerlink" title="第六章：用户和组"></a>第六章：用户和组</h3><h4 id="6-1-添加用户"><a href="#6-1-添加用户" class="headerlink" title="6.1 添加用户"></a>6.1 添加用户</h4><p>本章介绍用户的管理操作<br>比如，添加一个用户<br>sudo useradd -m test1<br>其中，sudo, 表示以管理员身份执行</p>
+<p>1 添加用户<br>  sudo useradd  -m test1<br>  其中，-m参数表示在 /home 下添加用户目录<br>2 修改用户密码<br> sudo passwd test1<br>3 删除用户<br> sudo userdel test1</p>
+<p>要点和细节：<br>1 在登录系统时，默认不允许以 root 用户登录<br>2 只有特殊的用户，才能执行 sudo<br>比如，zdw可以执行sudo，但test1不行<br>Linux下，把能执行sudo命令的用户叫 sudoer</p>
+<h4 id="6-2-超级用户"><a href="#6-2-超级用户" class="headerlink" title="6.2 超级用户"></a>6.2 超级用户</h4><p>超级用户 root<br>类似于 Windows 下的 Administrator 用户<br>切换到 root 用户，有全部权限，可以直接 useradd 等命令</p>
+<p>使用：<br>1首次使用时，需要给 root 设置密码<br>  sudo passwd root<br>2 切换到 root 用户<br>  su root<br>其中，su 表示 switch user<br>3 退出<br>  exit</p>
+<p>要点和细节：<br>1 su root 仅仅对当前会话 (终端) 有效<br>不影响当前桌面环境<br>2 root 权力太大，需要小心使用</p>
+<h4 id="6-3-用户组"><a href="#6-3-用户组" class="headerlink" title="6.3 用户组"></a>6.3 用户组</h4><p>Linux 下可以创建多个用户，可以用组进行管理用户。<br>比如：男生组 boys 女生组 girls<br>创建组<br>groupadd boys<br>创建用户<br>useradd -m -g boys ming<br>其中，-g表示在添加用户，同时将用户加到boys组<br>修改现有用户到新的组<br>usermod -g boys zdw<br>其中，usermod表示修改用户信息</p>
+<p>如何查看用户和组？<br>cat /etc/group<br>每一行表示一个group的信息，名称 + ID<br>如何查看用户列表？<br>cat /etc/passwd<br>每一行表示一个用户的信息</p>
+<p>要点和细节：<br>用户不多时，管理的时候并不使用组的概念<br> useradd  a1<br> useradd  b1<br>一个root，两个普通用户a1, b1 ，够用了！<br>默认地，会给a1用户建立一个同名的组a1 ，也就是说这个组里只有他一个人。</p>
+<h4 id="6-4-ROOT登录"><a href="#6-4-ROOT登录" class="headerlink" title="6.4 ROOT登录"></a>6.4 ROOT登录</h4><p>默认地，Ubuntu 不允许以root 登录桌面环境。(root 已经设置了密码)<br>那应该如何以root身份登录呢，需要一下设置：</p>
+<p>一、设置root 密码<br>首次执行时，需要修改root密码<br>sudo passwd root<br>此时，root已经设置了密码，但是还不能用root登录桌面。</p>
+<p>二、修改配置<br>按以下步骤，执行<br>1 su root<br>在终端里 切换到 root 用户<br>2 gedit /etc/pam.d/gdm-autologin<br>在这一行前面加一个#<br>#auth    required        pam_succeed_if.so user != root quiet_success<br>关闭并保存<br>3 gedit /etc/pam.d/gdm-password<br>在这一行前面加一个#<br>#auth    required    pam_succeed_if.so user != root quiet_success<br>关闭并保存<br>4 关闭虚拟机，重启后生效</p>
+<p>三、以root登录桌面<br>在登录界面，点下面的 ’未列出’<br>手工输入用户名 root ，登录即可以root身份登录。</p>
+<h3 id="第七章：文件的权限"><a href="#第七章：文件的权限" class="headerlink" title="第七章：文件的权限"></a>第七章：文件的权限</h3><h4 id="7-1-文件权限"><a href="#7-1-文件权限" class="headerlink" title="7.1 文件权限"></a>7.1 文件权限</h4><p>接下来讨论文件的权限问题<br>考虑以下几个方面：</p>
+<ul>
+<li>owner : 文件的属主 owner </li>
+<li>r : 文件是否可读 read </li>
+<li>w :  文件是否可写 write</li>
+<li>x:    文件是否可以执行 excute</li>
+</ul>
+<p>使用 ls 命令查看一个文件<br>ls -l simple.txt<br>-rw-r–r–. 1 shaofa shaofa 13 4月  21 03:48 simple.txt<br>其中，rw-r–r– 表示该文件的访问权限<br>类型 : 目录 d / 文件 -<br>权限 ：<br>链接/子项数 ：属主 ：组名 : 文件大小 ： 修改时间 : 文件名<br>r w - r - - r - -<br>权限分为三部分：自己 | 同组 | 别人<br>例如 ：<br> r w x r w x r w x<br> r w x r w x r - -<br> r - - - - - - - -<br>在文件夹窗口里，文件 | 属性 | 权限 查看</p>
+<h4 id="7-2-修改文件权限"><a href="#7-2-修改文件权限" class="headerlink" title="7.2 修改文件权限"></a>7.2 修改文件权限</h4><p>chmod  , 即change file mode 修改文件的访问权限<br>比如，一个文件simple.txt ，想让别人也能修改<br>chmod  o+w  simple.txt<br>其中，o ，表示 other 别人， +w ，表示增写 write 权限</p>
+<p>chmod  a+w  simple.txt<br>所有人 all 添加w权限<br>chmod a-w simple.txt<br>所有人减去w权限<br>chmod u+w  simple.txt<br>仅用户 user 自己的权限 +w<br>chmod o-w  simple.txt<br>修改别人 other 的权限 -w</p>
+<p>要点和细节：<br>1 只有文件的属主或者root 可以修改文件权限 </p>
+<p>2 省略写法<br>chmod  +w  simple.txt<br>chmod  -w   simple.txt<br>默认是修改自己和本组的权限</p>
+<h4 id="7-3-修改文件属性"><a href="#7-3-修改文件属性" class="headerlink" title="7.3 修改文件属性"></a>7.3 修改文件属性</h4><p>chown  , 即change owner 修改文件的属主</p>
+<p>一般来说，每个用户只操作自己的用户目录，所以 chown 命令并不常用</p>
+<p>示例：<br>1 在 /opt 目录下建立一个文件夹 zdw<br>2 将 zdw 目录分配给用户 shaofa<br>su root<br>mkdir /opt/zdw<br>chown -R shaofa /opt/zdw<br>ls -ld /opt/zdw</p>
+<p>要点和细节：<br>只有文件的 owner 和 root 才有权更改属主</p>
+<h3 id="第八章：可执行脚本"><a href="#第八章：可执行脚本" class="headerlink" title="第八章：可执行脚本"></a>第八章：可执行脚本</h3><h4 id="8-1-可执行脚本"><a href="#8-1-可执行脚本" class="headerlink" title="8.1 可执行脚本"></a>8.1 可执行脚本</h4><p>脚本 Script ，一种解释执行的程序<br>Linux 下常见的三种脚本程序</p>
+<ul>
+<li>Shell 脚本  *.sh</li>
+<li>Perl 脚本   *.pl</li>
+<li>Python 脚本 *.py</li>
+</ul>
+<p>脚本程序，本质是一个文本文件<br>1 它是一个文本文件<br>2 它具有可执行权限</p>
+<p>脚本程序都是由解释器来执行的<br> Shell脚本解释器：   /bin/sh<br> Perl脚本解释器：     /bin/perl<br> Python脚本解释器：/bin/python3<br>执行一个脚本时，以下两种方式等效<br>./hello.py<br>/bin/python3  hello.py</p>
+<h4 id="8-2-Shell脚本"><a href="#8-2-Shell脚本" class="headerlink" title="8.2 Shell脚本"></a>8.2 Shell脚本</h4><p>Shell脚本，按Shell的语法写出来的脚本,是 Linux 自带的脚本语言,相当于Windows下的 DOS 批处理脚本<br>如何编写shell脚本：<br>1 编辑一个文本文件,保存为 hello.sh<br>#!/bin/sh<br>echo “hello,world”<br>2 添加可执行权限<br> chmod +x  hello.sh<br>3 执行程序<br> ./hello.sh<br> /bin/sh hello.sh</p>
+<p> 要点和细节：<br> 1 第一行必须声明解释器<br> #!/bin/sh<br>2 必须有 x 权限，才能够执行<br>比如，一个程序只有作者执行，别人不能执行<br>  rwxr–r–<br>3 执行程序时，必须加上路径<br>  ./hello.sh<br>  /home/shaofa/hello.sh</p>
+<h4 id="8-3-Python脚本"><a href="#8-3-Python脚本" class="headerlink" title="8.3 Python脚本"></a>8.3 Python脚本</h4><p>Python脚本，比Shell要强大一些<br>对于 C / Java 工程师,  3天可以学会 Python<br>如何编写Python脚本：<br>1 编辑一个文本文件,保存为 hello.py<br>2 添加可执行权限<br> chmod +x  hello.py<br>3 执行程序<br> ./hello.py</p>
+<h3 id="第九章：环境变量"><a href="#第九章：环境变量" class="headerlink" title="第九章：环境变量"></a>第九章：环境变量</h3><h4 id="9-1-Shell中的变量"><a href="#9-1-Shell中的变量" class="headerlink" title="9.1 Shell中的变量"></a>9.1 Shell中的变量</h4><p>什么是环境变量，如何设置环境变量<br>最典型的环境变量，PATH ,  JAVA_HOME</p>
+<p>SHELL，是一个脚本编程语言<br>1 定义变量<br>2 执行命令 echo ls cd cp<br>3 if 判断逻辑， while循环逻辑<br>4 自定义的函数 …</p>
+<p>提示：如果想学一门脚本语言，可以选择 Python </p>
+<p>示例：<br>#!/bin/sh</p>
+<h1 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h1><p>OUTDIR=/opt</p>
+<h1 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h1><p>echo “output to : ${OUTDIR}”<br>ls ${OUTDIR}</p>
+<p>要点与细节：<br>1 定义一个变量<br>  NAME=value<br>等号左右两侧不要多加空格<br>2 使用一个变量<br>  ${NAME}<br>如果已经有了定界符，则可以简写为 $NAME<br>例如 echo $NAME/build/</p>
+<h4 id="9-2-环境变量"><a href="#9-2-环境变量" class="headerlink" title="9.2 环境变量"></a>9.2 环境变量</h4><p>环境变量，就是存在当前环境中的变量，无论Linux ，还是Windows，都有环境变量，比如，最常用的环境变量 PATH,  JAVA_HOME.</p>
+<p>定义环境变量<br>export OUTDIR=/opt/<br>显示环境变量<br>echo ${OUTDIR}<br>查看所有环境变量<br>printenv</p>
+<p>环境变量的使用：<br>可以在当前终端中使用<br>可以在 SHELL 脚本中调用<br>演示：在Shell脚本中调用一个环境变量。<br>在命令行中定义的环境变量，只对当前SHELL终端有效,当关闭终端后，重启后就消失了</p>
+<h4 id="9-3-用户环境变量"><a href="#9-3-用户环境变量" class="headerlink" title="9.3 用户环境变量"></a>9.3 用户环境变量</h4><p>用户环境变量：定义在 ~/.profile 中<br>在主目录下ls -la<br>其中，a 表示 all ，显示所有文件<br>注：在Linux下，以 . 开头的文件为 隐藏文件</p>
+<p>1 用文本编辑器打开 ~/. profile<br>gedit ~/.profile<br>2 添加<br>export JAVA_HOME=/opt/jdk1.8<br>保存并关闭<br>3 注销，重新登录后生效<br>echo $JAVA_HOME</p>
+<p>原理：当用户打开终端时，会自动运行 .profile ，将变量注入到当前环境中。</p>
+<p>要点和细节：<br>1 以点号 . 开头的文件为隐藏文件<br>ls -a 查看所有文件<br>2 此配置只对当前用户有效<br>因为每个用户都有自己的配置文件 .profile<br>3 有的Linux系统上，使用 .bash_profile</p>
+<h4 id="9-4-系统环境变量"><a href="#9-4-系统环境变量" class="headerlink" title="9.4 系统环境变量"></a>9.4 系统环境变量</h4><p>系统环境变量：定义在 /etc/profile 中<br>此中的环境变量对 所有用户 有效<br>以 root 身份执行<br>gedit  /etc/profile<br>但是，一般不直接修改 /etc/profile ，而是在 /etc/profile.d/ 创建一个自定义的脚本<br>演示：<br>1 用 gedit 创建一个脚本<br>gedit /etc/profile.d/myprofile.sh<br>2 定义环境变量<br>export TOMCAT=/opt/tomcat<br>3 注销并重新登录<br>重新登录后，环境变量生效</p>
+<h4 id="9-5-PATH环境变量"><a href="#9-5-PATH环境变量" class="headerlink" title="9.5 PATH环境变量"></a>9.5 PATH环境变量</h4><p>先来看一个问题：创建一个可执行脚本 hello.sh<br>直接执行会显示未找到命令，明明就在当前目录下，为什么提示找不到？</p>
+<p>PATH，最常见的一个环境变量<br>用于描述可执行程序的搜索路径<br>echo $PATH<br>多个路径之间以冒号分隔<br>usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin<br>默认地，系统从以下目录中搜索可执行程序<br>/usr/bin  比如，/usr/bin/tar<br>/usr/sbin  比如，/usr/sbin/useradd<br>/usr/local/bin<br>/usr/local/sbin<br>其中， sbin 为超级用户 root 才能执行的程序<br>/usr/ 下系统自带的程序， /usr/local/ 是用户安装的程序</p>
+<p>演示：修改PATH环境变量。。。<br>1 编辑 /etc/profile.d/myprofile.sh<br>设定 PATH 环境变量<br>export PATH=$PATH:/opt/tomcat/bin<br>2 注销，重新登录后生效</p>
+<h3 id="第十章：网络环境"><a href="#第十章：网络环境" class="headerlink" title="第十章：网络环境"></a>第十章：网络环境</h3><h4 id="10-1-VMware网络环境"><a href="#10-1-VMware网络环境" class="headerlink" title="10.1 VMware网络环境"></a>10.1 VMware网络环境</h4><p>演示：在Ubuntu上用浏览器上网。<br>1 检查 虚拟网络编辑器<br>以管理员方式运行 VMware<br>打开虚拟网络编辑器<br>查看 NAT方式下，虚拟子网的网段 如 192.168.43.0</p>
+<p>2 检查虚拟网卡<br>控制面板，“网络与共享中心 | 更改适配器设置 ”<br>默认地，有 VMnet1 和 VMnet8 两个虚拟网卡<br>如果没有找到VMnet1/VMnet8，请卸载VMware重装<br>注意：以管理员方式运行安装程序，会更好</p>
+<p>3 检查虚拟机的网络配置： NAT模式</p>
+<h4 id="10-2-虚拟机联网"><a href="#10-2-虚拟机联网" class="headerlink" title="10.2 虚拟机联网"></a>10.2 虚拟机联网</h4><p>虚拟机联网设置：<br>1 检查虚拟机硬件是否为 NAT方式<br>2 登录 Ubuntu系统 , 右上角设置<br>   设置面板左侧，“网络”<br>   检查 IPv4 / DHCP 设置<br>   ( 默认设置即可，不需要更改 )<br>3 检查IP地址<br>我的演示环境IP : 192.168.43.129<br>4 访问外网测试<br>  ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a><br>     按 CTRL + C 中断<br>注意：宿主机本身必须已经连接外网</p>
+<p>要点和细节：<br>可以在图形界面下设置网络，也可以在终端里用命令行方式设置</p>
+<h4 id="10-3-与宿主机互联"><a href="#10-3-与宿主机互联" class="headerlink" title="10.3 与宿主机互联"></a>10.3 与宿主机互联</h4><p>检查IP地址<br>虚拟机： 192.168.43.129<br>宿主机： 192.168.43.1</p>
+<p>虚拟机 与 宿主机 互联：<br>192.168.43.1 -&gt; 192.168.43.129<br>ping 192.168.43.128</p>
+<p>192.168.43.128 -&gt; 192.168.43.1<br>ping 192.168.43.1 ???不支持</p>
+<h4 id="10-4-手动配置网络"><a href="#10-4-手动配置网络" class="headerlink" title="10.4 手动配置网络"></a>10.4 手动配置网络</h4><p>在终端里，以命令行方式来配置网络，常用命令: ifconfig  ,  netstat 等</p>
+<p>默认地，Ubuntu 下面不带 ifconfig 命令<br>需要使用 apt 软件包管理器<br>apt install net-tools 安装一个软件包<br>apt remove net-tools 移除一个软件包<br>apt search xxx  搜索<br>apt list | grep xxx 列表</p>
+<p>配置：<br>1 查看网络配置<br> ifconfig<br>其中，if 表示 interface 网络接口<br>会列出所有的网络接口，及各个接口的状态<br>2 开启/禁用网络<br>sudo ifconfig xxx up<br>sudo ifconfig xxx down</p>
+<h3 id="第十一章：FTP服务器"><a href="#第十一章：FTP服务器" class="headerlink" title="第十一章：FTP服务器"></a>第十一章：FTP服务器</h3><h4 id="11-1-FTP服务器"><a href="#11-1-FTP服务器" class="headerlink" title="11.1 FTP服务器"></a>11.1 FTP服务器</h4><p>思考：怎么把文件传到 Ubuntu 主机上？<br>1 U盘拷贝<br>2 网络传输<br>FTP<br>SSH ( SFTP, scp )<br>NFS<br>SAMBA / CIFS<br>FTP, File Transfer Protocol ,文件传输协议</p>
+<p>演示：使用FTP来传输文件。。<br>客户端  FileZilla ( Windows)<br>服务器  vsftpd ( Ubuntu )</p>
+<h4 id="11-2-vsftpd"><a href="#11-2-vsftpd" class="headerlink" title="11.2 vsftpd"></a>11.2 vsftpd</h4><p>vsftpd,  是Linux下一个常见的FTP服务器软件<br>其中，d 表示 daemon ，表示后台程序、守护进程的意思<br>演示：搭建FTP服务器：<br>提示：需要以管理员身份来操作<br>su root</p>
+<p>1 检查vsftpd 是否已经安装<br>ls /usr/sbin/vsftpd</p>
+<p>2 安装 vsftpd<br>apt install vsftpd</p>
+<p>3 修改vsftpd.conf 配置<br>cp /etc/vsftpd.conf  /etc/vsftpd.conf.2  先备份一下<br>gedit /etc/vsftpd.conf</p>
+<p>在文本编辑器里，找到这一行，并去掉这一行前面的#号<br>write_enable=YES</p>
+<p>注意：<br>(1) Linux的系统配置文件，一般都放在 /etc 下面<br>(2) Linux的配置文件一般都是这个风格:<br>key=value<br>#表示注释行</p>
+<p>4 关闭系统的防火墙<br>ufw disable</p>
+<p>5 启动服务 FTP服务器<br>service vsftpd start</p>
+<p>同理，相关的命令还有：<br>service vsftpd status 查看服务状态<br>service vsftpd stop 停止<br>service vsftpd restart 重启<br>完毕!</p>
+<h4 id="11-3-FileZilla"><a href="#11-3-FileZilla" class="headerlink" title="11.3 FileZilla"></a>11.3 FileZilla</h4><p>FileZilla, 一个免费的FTP解决方案<br>FileZilla FTP Client<br>FileZilla Ftp Server<br>注意，FTP的客户端软件有多种选择, FileZilla只是比较常见的一个</p>
+<h4 id="11-4-FTP与防火墙"><a href="#11-4-FTP与防火墙" class="headerlink" title="11.4 FTP与防火墙"></a>11.4 FTP与防火墙</h4><p>网络防火墙 Firewall，是一种安全机制，用于减少服务器所受的攻击。<br>实际部署时，一般需要配置一个防火墙<br>1 Linux系统自带的防火墙 ( 一般不用 )<br>2 独立的防火墙，例如云防火墙</p>
+<p>Ubuntu的防火墙，一般是关闭的<br>查看状态<br>  ufw status<br>关闭防火墙<br>  ufw disable<br>开启防火墙<br>  ufw enable<br>注意：仅仅enable还不够，还需要另外配置防火墙规则</p>
+<p>无论是哪一种防火墙，都需要配置防火规则<br>比如，允许哪些端口，阻止哪些端口<br>例如，<br>WEB服务器，一般要允许 TCP/80 端口<br>MySQL : TCP / 3306<br>Redis : TCP / 6379<br>FTP服务器，要允许哪些端口呢？TCP/21 ?</p>
+<p>FTP服务器要开放的端口：<br>1 控制端口 ：一般是 TCP / 21<br>2 数据端口 ：一个自定义的范围，如 TCP / 5500 - 5600</p>
+<p>演示：<br>1 编辑 /etc/vsftpd.conf ，添加以下配置：<br>listen_port=21<br>pasv_min_port=5500 　　　<br>pasv_max_port=5600<br>2 重启 vsftpd<br>  sudo service vsftpd restart</p>
+<h3 id="第十二章：SSH服务器"><a href="#第十二章：SSH服务器" class="headerlink" title="第十二章：SSH服务器"></a>第十二章：SSH服务器</h3><h4 id="12-1-SSH服务器"><a href="#12-1-SSH服务器" class="headerlink" title="12.1 SSH服务器"></a>12.1 SSH服务器</h4><p>你可能听说过的术语：<br>Telnet, Putty,  SecureCRT,  Xshell 等<br>SSH远程登录，也是 C / S 模式<br>演示：<br>1 使用 Xshell 远程登录<br>2 使用 Xftp 传输文件</p>
+<h4 id="12-2-openssh-server"><a href="#12-2-openssh-server" class="headerlink" title="12.2 openssh-server"></a>12.2 openssh-server</h4><p>默认地，Ubuntu 桌面版不带SSH服务器</p>
+<p>检查服务是否存在<br>ls /usr/sbin/sshd<br>步骤：<br>1 安装服务<br>apt install openssh-server<br>2 关闭防火墙<br>ufw disable<br>3 启动服务<br>service ssh start</p>
+<p>要点与细节：<br>1 在 /etc/init.d 下，是各个系统服务的启动脚本<br>2 软件包搜索<br>apt list | grep ssh<br>apt search ssh –names-only<br>3 删除软件包<br>apt remove xxx 卸载软件包<br>apt purge xxx  卸载软件包、并清除配置文件</p>
+<h4 id="12-3-Xshell"><a href="#12-3-Xshell" class="headerlink" title="12.3 Xshell"></a>12.3 Xshell</h4><p>XShell , 一个支持SSH协议的客户端，类似的还有 putty, SecureCRT等<br>XShell 的使用</p>
+<p>一、下载安装<br>本教程使用XShell个人版作为演示，此版本可以个人免费使用。<br>从本网盘的相关软件目录下，下载Xshell和XFtp的软件包。<br>Xshell-6.0.0197p.exe<br>Xftp-6.0.0191p.exe</p>
+<p>安装过程，一律按默认即可。<br>二、连接服务器<br>运行 XShell<br>菜单，文件 | 新建<br>左侧：点‘连接’<br>右侧：输入名称，及主机IP<br>左侧：点‘用户身份验证’<br>右侧：输入Linux下的用户名和密码<br>注意，默认地 Ubuntu 是不支持以 root 远程登录的，这里应该填写一个普通用户名。<br>左侧：点‘外观’<br>右侧：设置一下字体和大小<br>点‘确定’，关闭设置<br>三、连接服务器<br>左连，在会话管理器里，找到刚才建立的会话。<br>双击，则连接至服务器<br>首次连接到服务器时，会提示是否保存密码。点 ‘接受并保存’ ，<br>则得到一个终端，可以在终端里输入命令行。</p>
+<p>要点与细节：<br>1 Ubuntu 不支持 root 登录<br>2 XShell 只能运行控制台程序，不能启动窗口程序 ( 不支持图形界面)<br>例如，gedit  不能运行！</p>
+<h4 id="12-4-Xftp"><a href="#12-4-Xftp" class="headerlink" title="12.4 Xftp"></a>12.4 Xftp</h4><p>Xftp , 一个 SFTP 协议的客户端，能够实现文件传输.</p>
+<p>要点和细节：<br>SFTP 不是 FTP ，SFTP也是基于SSH协议的，因此也是 TCP / 22 端口</p>
+<h4 id="12-5-SSH允许登录ROOT"><a href="#12-5-SSH允许登录ROOT" class="headerlink" title="12.5 SSH允许登录ROOT"></a>12.5 SSH允许登录ROOT</h4><p>默认地，SSH服务器不允许以root登录，如果需要SSH服务器允许root登录则需要以下设置：<br>1 切换到 root<br>su root<br>2 先备份一下配置文件<br>cp /etc/ssh/sshd_config /etc/ssh/sshd_config.2<br>3 编译sshd的配置文件<br>gedit /etc/ssh/sshd_config<br>把下面这一行<br>#PermitRootLogin prohibit-password<br>改成:<br>PermitRootLogin yes<br>注意前面不要加#号<br>4 重启ssh服务<br>service ssh restart<br>完毕</p>
 <h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
 
     
