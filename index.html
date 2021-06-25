@@ -390,6 +390,84 @@
 <h4 id="12-4-Xftp"><a href="#12-4-Xftp" class="headerlink" title="12.4 Xftp"></a>12.4 Xftp</h4><p>Xftp , 一个 SFTP 协议的客户端，能够实现文件传输.</p>
 <p>要点和细节：<br>SFTP 不是 FTP ，SFTP也是基于SSH协议的，因此也是 TCP / 22 端口</p>
 <h4 id="12-5-SSH允许登录ROOT"><a href="#12-5-SSH允许登录ROOT" class="headerlink" title="12.5 SSH允许登录ROOT"></a>12.5 SSH允许登录ROOT</h4><p>默认地，SSH服务器不允许以root登录，如果需要SSH服务器允许root登录则需要以下设置：<br>1 切换到 root<br>su root<br>2 先备份一下配置文件<br>cp /etc/ssh/sshd_config /etc/ssh/sshd_config.2<br>3 编译sshd的配置文件<br>gedit /etc/ssh/sshd_config<br>把下面这一行<br>#PermitRootLogin prohibit-password<br>改成:<br>PermitRootLogin yes<br>注意前面不要加#号<br>4 重启ssh服务<br>service ssh restart<br>完毕</p>
+<h3 id="第十三章：vim文本编辑"><a href="#第十三章：vim文本编辑" class="headerlink" title="第十三章：vim文本编辑"></a>第十三章：vim文本编辑</h3><h4 id="13-1-vim文本编辑"><a href="#13-1-vim文本编辑" class="headerlink" title="13.1 vim文本编辑"></a>13.1 vim文本编辑</h4><p>vi / vim , 一个基于控制台的文本编辑器<br>gedit , 一个基于GUI的文本编辑器<br>其中，vim 是 vi 的升级版,  演示使用 vim 命令 </p>
+<p>1 打开文本编辑<br>vim abc.txt<br>如果目标文件存在，则打开编辑；如果不存在，会新建一个文件<br>如果系统上没有 vim ，就安装一下：<br>sudo apt install vim<br>2 切换模式<br>编辑模式 Insert Mode：  按 i 键<br>命令模式 Command Mode:  按 ESC 键<br>3 退出编辑<br>按 ESC 键，进入命令模式<br>输入  :wq  保存并退出<br>      输入  :q   退出<br>      输入  :q!  强制退出 ( 放弃保存 )</p>
+<h4 id="13-2-vim更多用法"><a href="#13-2-vim更多用法" class="headerlink" title="13.2 vim更多用法"></a>13.2 vim更多用法</h4><p>vim 的完全用法非常复杂，花样繁多，几乎键盘上的每一个键都是快速键，不建议深入研究, vim 本身是一个低效率的工具<br>Linux文本文件的编辑<br>1  桌面环境：gedit<br>2  终端环境:</p>
+<ul>
+<li>少量修改 : vim</li>
+<li>大量修改 : 在 Windows上编辑，然后上传到Linux</li>
+</ul>
+<h4 id="13-3-文本文件的上传"><a href="#13-3-文本文件的上传" class="headerlink" title="13.3 文本文件的上传"></a>13.3 文本文件的上传</h4><p>推荐：在 Windows上编辑，然后上传到 Linux<br>使用 notepad ++ 或者其他的专业编辑器<br>文本文件的换行符<br>Windows : \r\n<br>Linux : \n<br>可以在 Notepad ++ 里观察到此区别<br>视图 | 显示符号 | 显示行尾符</p>
+<p>换行符的转换：<br>编辑 | 文档格式转换 | 转换为 UNIX格式</p>
+<p>注意：只有在编辑 SHELL 脚本时，才需要转换<br>其他格式的文件一般都不需要转换，如*.xml, *.java</p>
+<p>演示：Shell脚本的编辑 。。<br>1 用 Notepad++打开编辑 mytest.sh<br>2 转成 Unix格式 \n<br>3 上传至Linux<br>4 chmod  +x mytest.sh<br>5 运行 ./mytest.sh</p>
+<h3 id="第十四章：java运行环境"><a href="#第十四章：java运行环境" class="headerlink" title="第十四章：java运行环境"></a>第十四章：java运行环境</h3><h4 id="14-1-java的安装"><a href="#14-1-java的安装" class="headerlink" title="14.1 java的安装"></a>14.1 java的安装</h4><p>接下来介绍在 Ubuntu下的Java环境<br>1 JDK / JRE 的安装<br>2 Java的环境变量<br>3 运行普通Java程序<br>4 Java程序的运行脚本</p>
+<p>先安装 Java 的软件包:<br>JRE:<br>  openjdk-8-jre-headless<br>JDK:<br>  openjdk-8-jdk-headless<br>其中，openjdk 是JDK的免费版本, 推荐 JDK8</p>
+<h4 id="14-2-运行java程序"><a href="#14-2-运行java程序" class="headerlink" title="14.2 运行java程序"></a>14.2 运行java程序</h4><p>安装 openjdk-8-jre-headless<br>ls /usr/bin/java<br>默认放在 /usr/bin 下，不需要额外设置PATH<br>提示:如果放在自定义位置，需要设置PATH<br>export PATH=$PATH:/opt/jdk8/bin</p>
+<p>1 在 Windows 上开发和调试<br>2 发布<br>class文件<br>普通 JAR文件 / 可执行JAR文件<br>两种JAR文件的运行方式不同:<br>java  -cp  your_program.jar   your.MainClass<br>java  -jar  your_program.jar<br>3 上传至 Linux : FTP / SFTP<br>4 运行程序<br>  java -jar simple.jar<br>5 权限因素 , 自行检查<br>程序里需要访问系统文件 ,  如 /etc/ , 得用  root 运行<br>程序里需要开启TCP端口 ,  如 80,   得用 root 运行 。</p>
+<p>注意,  Java GUI 的程序不能在终端里运行</p>
+<h4 id="14-3-java启动脚本"><a href="#14-3-java启动脚本" class="headerlink" title="14.3 java启动脚本"></a>14.3 java启动脚本</h4><p>一般地，需要创建一个脚本，以便快捷地启动程序<br>参考 run_java.sh<br>设置工作目录<br>设置必要的环境变量<br>设置 JVM 运行参数<br>运行程序</p>
+<p>使用 run_java.sh 来运行 java程序<br>1 修改 run_java.sh<br>2 转成 UNIX 风格<br>也可以在ubuntu下运行 : dos2unix run_java.sh 转换一下<br>3 上传至 Linux<br>4 添加 +x 权限 , 运行脚本</p>
+<h3 id="第十五章-Tomcat服务器"><a href="#第十五章-Tomcat服务器" class="headerlink" title="第十五章 Tomcat服务器"></a>第十五章 Tomcat服务器</h3><h4 id="15-1-Tomcat服务器"><a href="#15-1-Tomcat服务器" class="headerlink" title="15.1 Tomcat服务器"></a>15.1 Tomcat服务器</h4><p>Tomcat 本身是一个 Java程序，必须要有 Java 的运行环境。<br>下载 tomcat 的 Linux 版本<br><a target="_blank" rel="noopener" href="http://tomcat.apache.org/">http://tomcat.apache.org/</a><br>apache-tomcat-8.5.54.tar.gz<br>注意，Tomcat的版本和JDK版本有对应关系<br>tomcat8.5 &lt;=&gt; jdk8</p>
+<p>以下操作用 root 身份执行<br>1 上传到 Ubuntu<br>2 解压缩<br>tar -zxvf apache-tomcat-8.5.54.tar.gz<br>mv apache-tomcat-8.5.54 tomcat<br>3 运行Tomcat<br>tomcat/bin/startup.sh<br>4 检查 tomcat 进程是否在运行<br> ps -ef | grep java<br> netstat -anp | grep 8080<br>5 关闭防火墙 ufw disable<br>6 访问网站 <a target="_blank" rel="noopener" href="http://192.168.43.129:8080/">http://192.168.43.129:8080</a><br>7 关闭Tomcat :<br> tomcat/bin/shutdown.sh </p>
+<p>要点和细节：<br>1 Tomcat 需要有JAVA的运行环境<br>2 Tomcat作为网络服务器，应该以 root 执行<br>启动 startup.sh<br>关闭 shutdown.sh </p>
+<h4 id="15-2-Tomcat的配置"><a href="#15-2-Tomcat的配置" class="headerlink" title="15.2 Tomcat的配置"></a>15.2 Tomcat的配置</h4><p>Tomcat 的配置文件:<br>/opt/tomcat/conf/server.xml<br>至少需要修改：端口，应用目录<br>配置演示：<br>一、修改 Tomcat 的端口号<br>修改 conf/server.xml<br>网站服务一般指定为 80 端口<br>    <Connector port="80" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" /></p>
+<p>二、指定应用目录<br>(1) 上传网站应用<br>mkdir -p /opt/www/ROOT<br>使用xftp将网站应用上传到 /opt/www/ROOT ， 注意ROOT大写</p>
+<p>(2) 指定应用目录<br>修改 conf/server.xml<br>      <Host name="localhost"  appBase="/opt/www"
+            unpackWARs="true" autoDeploy="true"><br>        <Valve className="org.apache.catalina.valves.AccessLogValve" 
+               directory="logs"
+               prefix="localhost_access_log" suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" /><br>      </Host><br>(3) 上传 server.xml<br>把修改后的 server.xml ，传到服务器上</p>
+<p>三、启动网站<br>重启Tomcat<br>/root/tomcat/bin/shutdown.sh<br>/root/tomcat/bin/startup.sh<br>观察启动日志<br>cat /root/tomcat/logs/catalina.out</p>
+<p>检查 tomcat 进程是否在运行<br> ps -ef | grep java<br> netstat -anp | grep 80<br>打开浏览器，访问<br><a target="_blank" rel="noopener" href="http://192.168.43.129/">http://192.168.43.129</a><br><a target="_blank" rel="noopener" href="http://192.168.43.129/time">http://192.168.43.129/time</a></p>
+<p>要点和细节：<br>1 可以部署在/opt下，也可以部署在/root下<br>2 网站的根目录 ： ROOT , 区分大小写<br>/opt/www/ROOT<br>3 观察Tomcat的启动日志<br>cat /root/tomcat/logs/catalina.out</p>
+<h4 id="15-3-Tomcat启动日志"><a href="#15-3-Tomcat启动日志" class="headerlink" title="15.3 Tomcat启动日志"></a>15.3 Tomcat启动日志</h4><p>Tomcat的启动日志<br>cat tomcat/logs/catalina.out<br>启动 tomcat服务后，应该观察一下日志，看有没有错误提示。</p>
+<p>认识 catalina.sh<br>1 启动Tomcat,  相当于 startup.sh<br>tomcat/bin/catalina.sh start<br>2 停止 Tomcat<br>tomcat/bin/catalina.sh stop<br>3 前台运行 Tomcat ( 用于调试)<br>tomcat/bin/catalina.sh run</p>
+<h4 id="15-4-Tomcat启动脚本"><a href="#15-4-Tomcat启动脚本" class="headerlink" title="15.4 Tomcat启动脚本"></a>15.4 Tomcat启动脚本</h4><p>Tomcat自带的脚本：<br>startup.sh<br>shutdown.sh<br>catalina.sh<br>实际上，startup.sh 和 shutdown.sh 的内部，都是调用了catalina.sh </p>
+<p>步骤：<br>创建一个脚本 run_tomcat.sh<br>以后台方式运行服务<br>./run_tomcat.sh start<br>停止服务<br>./run_tomcat.sh stop<br>在前台方式运行 (当前窗口运行,方便打印调试 )<br>./run_tomcat.sh run<br>其中，参数 start / stop / run 会间接地传给 catalina.sh</p>
+<h3 id="第十六章-进程管理"><a href="#第十六章-进程管理" class="headerlink" title="第十六章 进程管理"></a>第十六章 进程管理</h3><h4 id="16-1-程序与进程"><a href="#16-1-程序与进程" class="headerlink" title="16.1 程序与进程"></a>16.1 程序与进程</h4><p>程序 Program：指一个程序文件，如 notepad.exe<br>进程 Process：当一个程序运行起来，在操作系统内创建一条记录，用于描述和控制它的运行<br>演示：运行多个 /usr/bin/vim，并观察进程信息<br>    ps -ef<br>其中，各个字段的含义：<br>UID : 执行者<br>PID :  进程ID<br>PPID :   父进程ID<br>STIME :   启动时间<br>CMD :   启动时调用的命令行</p>
+<p>按名称 查找某个进程<br>ps -ef  |  grep java<br>其中，将前者输出的信息，重定向给 grep 命令过滤处理</p>
+<h4 id="16-2-程序管理"><a href="#16-2-程序管理" class="headerlink" title="16.2 程序管理"></a>16.2 程序管理</h4><p>top 命令, 相当于Windows的任务管理器<br>查看所有进程<br>top</p>
+<ul>
+<li>按上下键翻阅</li>
+<li>按 q 或 CTRL + C 中止退出</li>
+</ul>
+<p>查看某个进程<br>top -p NNN<br>其中，NNN为目标进程的PID<br>所以，可以先用 ps 命令查找目标进程的PID</p>
+<p>使用 kill 命令，杀死一个进程<br>kill -9 NNN<br>或者<br>pkill  name_of_progress</p>
+<p>进程管理的几个命令:<br>ps -ef<br>ps -ef | grep xxx<br>top<br>top -p NNN<br>kill -9 NNN<br>pkill name_of_program<br>CTRL + C 中止当前进程(前台进程)</p>
+<h4 id="16-3-前台与后台进程"><a href="#16-3-前台与后台进程" class="headerlink" title="16.3 前台与后台进程"></a>16.3 前台与后台进程</h4><p>前台进程:  运行在前台<br>后台进程:  运行在后台<br>演示:<br>./run_tomcat run  以前台方式运行 ( CTRL+C 中止)<br>./run_tomcat start 以后台方式运行</p>
+<p>区别 1 : 有无控制台<br>前台进程：有控制台,  输出至当前终端<br>后台进程：无控制台, 看不到输出</p>
+<p>区别 2:  有无父进程<br>前台进程：有父进程，父进程即为当前终端，当终端关闭时，前台进程被一同关闭<br>后台进程：父进程为系统进程 ( 1 号进程 )，当终端关闭时，后台进程不受影响<br>区别 3:  强行终止<br>前台进程：使用 CTRL + C 强行终止<br>后台进程：使用 kill -9 NNN 强行终止 </p>
+<h3 id="第十七章-Redis服务器"><a href="#第十七章-Redis服务器" class="headerlink" title="第十七章 Redis服务器"></a>第十七章 Redis服务器</h3><h4 id="17-1-Redis服务器"><a href="#17-1-Redis服务器" class="headerlink" title="17.1 Redis服务器"></a>17.1 Redis服务器</h4><p>Redis ，一款Key-Value型内存数据库，常见于网站开发场景<br>Redis 服务器只发布了 Linux 版本。</p>
+<p>1、自动安装 , 5.0.7<br>apt install redis-server<br>2、手动编译安装<br>从官网下载源码，编译、部署</p>
+<p>以方法以自动安装为例：<br>1 安装  redis<br>apt install redis-server<br>2 检查安装<br>ls /usr/bin/redis-server<br>ls /etc/init.d<br>3 关闭防火墙<br>ufw disable<br>4 启动redis服务器<br>service redis-server start<br>ps -ef | grep redis<br>netstat -anp | grep redis<br>5 连接 redis服务器<br>redis-cli</p>
+<h4 id="17-2-Redis的配置"><a href="#17-2-Redis的配置" class="headerlink" title="17.2 Redis的配置"></a>17.2 Redis的配置</h4><p>Redis 的配置，主要是 IP 、端口 、密码的配置，配置文件<br>/etc/redis/redis.conf<br>应该配置一下，否则只能在本机上使用 (127.0.0.1)<br>步骤：<br>(1) 下载 redis.conf<br>(2) 修改 redis.conf<br>1 绑定IP配置<br>当服务器存在多个网卡(IP) 时，让服务器监听哪个IP<br> bind 127.0.0.1 只能从本机访问<br> bind 192.168.43.128 只能从内网访问<br> bind 202.10.8.130  可以从外网访问<br> bind 0.0.0.0  可以从任意位置访问此服务器 ( 推荐 )<br>如果不加 bind 指令，则默认为 0.0.0.0 ，表示监听所有网卡</p>
+<p>2 端口配置<br>port 6379<br>默认6379，一般不需要改动。<br>提示：如果部署了防火墙，请允许 TCP/6379 访问</p>
+<p>3保护模式<br>protected-mode no<br>设置为no吧。一般都是要设置密码的，无所谓什么保护模式。<br>注：只有密码为空、并且bind为空时，保护模式才生效。</p>
+<p>(4) 密码<br>在编辑器里，搜索 requirepass  找到这一行<br>requirepass 834308083<br>默认 redis 没有设置密码<br>实际部署时请设置一个高强度密码，例如，834308083@yourcompany<br>完毕<br>重启 redis 服务器<br>service redis-server restart<br>(3) 上传 redis.conf<br>(4) 重启 redus 服务<br>service redis-server restart</p>
+<p>要点与细节：<br>1 以上设置修改后，重启后生效<br>2 设置密码之后，在命令行里附加密码<br>redis-cli  -a 834308083<br>或者在 redis-cli 中使用 AUTH 命令<br>redis-cli</p>
+<blockquote>
+<p>auth 834308083</p>
+</blockquote>
+<h4 id="17-3-Redis的编译安装"><a href="#17-3-Redis的编译安装" class="headerlink" title="17.3 Redis的编译安装"></a>17.3 Redis的编译安装</h4><p>Redis , 一个用C语言写的程序<br><a target="_blank" rel="noopener" href="https://redis.io/">https://redis.io/</a><br>官网上提供有源码，如果需要可以自行编译<br>当项目中需要特定版本的 redis 时，可以下载其源码，自行编译安装。</p>
+<p>Ubuntu的标准软件包是 redis 5.0.7<br>但是项目中指定使用 redis 6.0.6<br>在这种情况下，就得自己下载源码编译一下</p>
+<p>Redis编译安装：<br>准备<br>redis是用C语言写的程序，需要你的系统上有gcc编译工具。如果没有的话，先安装一下编译器，然后再执行后面的编译操作。<br>apt install gcc<br>apt install make<br>编译过程<br>1 解压缩<br>tar -zxvf redis-6.0.6.tar.gz<br>2 进入源码目录<br>cd redis-6.0.6<br>3 编译<br>make<br>需要主机上有C语言的编译环境，即gcc 等编译工具链<br>4 安装<br>(1) 默认安装<br>make install<br>默认地，相关程序会被安装到 /usr/local/bin 目录下<br>例如 /usr/local/bin/redis-server<br>(2) 也可以安装到指定目录<br>export PREFIX=/opt/redis<br>make install<br>5 运行<br>redis-server在运行的时候，可以指定配置文件的位置<br>例如：<br>/usr/local/bin/redis-server  /path/of/redis/redis.conf</p>
+<h3 id="第十八章-数据库服务器"><a href="#第十八章-数据库服务器" class="headerlink" title="第十八章 数据库服务器"></a>第十八章 数据库服务器</h3><h4 id="18-1-MySQL服务器"><a href="#18-1-MySQL服务器" class="headerlink" title="18.1 MySQL服务器"></a>18.1 MySQL服务器</h4><p>MySQL ，一款常见的数据库服务器，接下来介绍MySQL服务器的安装、配置和管理<br>为什么选择MySQL ?  跨平台, 免费 ？<br>mysql<br>apt list | grep mysql-server<br>mariadb:  免费开源<br>apt list | grep mariadb-server<br>mariadb，是 mysql 的免费开源版本</p>
+<p>mariadb 的安装<br>apt install mariadb-server<br>检查安装<br>ls /etc/init.d<br>启动<br>service mysql restart</p>
+<p>连接 mariadb :<br>mariadb -u root<br>或者<br>mysql -u root<br>两者使用完全相同，认为mariadb完全兼容mysql</p>
+<blockquote>
+<p>show databases;    // SQL指令，末尾加分号<br>quit;</p>
+</blockquote>
+<p>要点与细节：<br>1 mariadb 与 mysql完全兼容，使用时感受不到差别<br>2 此时，尚不支持远程连接,  刚才演示的是本机连接</p>
+<h4 id="18-2-MySQL的配置"><a href="#18-2-MySQL的配置" class="headerlink" title="18.2 MySQL的配置"></a>18.2 MySQL的配置</h4><p>MySQL / Mariadb 的配置：<br>ls /etc/mysql/<br>配置文件名以 *.cnf 为后缀<br>参考 windows下mysql的配置 :  my.ini</p>
+<p>演示：<br>1 修改配置文件<br>2 重新 mysql<br>service mysql restart</p>
+<h4 id="18-3-MySQL命令行"><a href="#18-3-MySQL命令行" class="headerlink" title="18.3 MySQL命令行"></a>18.3 MySQL命令行</h4><p>MySQL / Mariadb 自带了客户端<br>连接服务器,  默认密码为空<br>mysql -u root<br>mysql -u root -p a1b2c3<br>mysql -h localhost -u root -p a1b2c3</p>
+<p>几个简单的SQL指令：<br>show databases;   // 显示所有数据库<br>use xxx;    // 进入某个数据库<br>show tables;  // 显示所有的表<br>select Host,User,Password from mysql.user;<br>quit;  // 退出<br>可以看到，默认密码为空，且仅支持localhost登录</p>
+<h4 id="18-4-MySQL远程访问"><a href="#18-4-MySQL远程访问" class="headerlink" title="18.4 MySQL远程访问"></a>18.4 MySQL远程访问</h4><p>默认的，mysql/mariadb 只支持localhost 本地访问，不支持 127.0.0.1 ，也不支持远程访问<br>查看现有的用户:<br>select Host,User,Password from mysql.user;</p>
+<p>设置方法：<br>1 检查配置文件, 取消绑定IP<br>vim /etc/mysql/mariadb.conf.d/50-server.cnf<br>#bind-address            = 127.0.0.1<br>2 添加 root@’%’ 访问授权<br>参考 init.sql 中的SQL语句</p>
+<p>也可以用命令行直接导入一个sql脚本<br>mysql -u root  &lt;init.sql</p>
 <h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
 
     
