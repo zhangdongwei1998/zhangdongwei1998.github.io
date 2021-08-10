@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhangdongwei1998.github.io">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
+  <meta name="description" content="Chapter2-向量和矩阵1.行向量 创建行向量   一：v &#x3D; [11 12 4 36] 二：v &#x3D; 3:1:9 表示从3到9间隔为1. 中间间隔省略的话默认为1 三：v &#x3D; linspace(3, 9, 7) 表示从3到9做等差数列，一共7个数 四：v &#x3D; logspace(3, 9, 7)表示从10^3开始到10^9做等比数列，一共有7个数 五：v &#x3D; [u,v],表示将u向量和v向量组合">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://zhangdongwei1998.github.io/archives/index.html">
+<meta property="og:url" content="https://zhangdongwei1998.github.io/2021/08/10/MATLAB2-%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Chapter2-向量和矩阵1.行向量 创建行向量   一：v &#x3D; [11 12 4 36] 二：v &#x3D; 3:1:9 表示从3到9间隔为1. 中间间隔省略的话默认为1 三：v &#x3D; linspace(3, 9, 7) 表示从3到9做等差数列，一共7个数 四：v &#x3D; logspace(3, 9, 7)表示从10^3开始到10^9做等比数列，一共有7个数 五：v &#x3D; [u,v],表示将u向量和v向量组合">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-10T09:33:15.440Z">
+<meta property="article:modified_time" content="2021-08-06T04:54:34.235Z">
 <meta property="article:author" content="zdw">
 <meta name="twitter:card" content="summary">
   
@@ -207,298 +211,287 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MATLAB2-向量和矩阵" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+  <div class="article-entry" itemprop="articleBody">
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/08/10/MATLAB6-%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-        <time datetime="2021-08-10T09:33:15.534Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
-</a>
+    <h1 id="Chapter2-向量和矩阵"><a href="#Chapter2-向量和矩阵" class="headerlink" title="Chapter2-向量和矩阵"></a>Chapter2-向量和矩阵</h1><h3 id="1-行向量"><a href="#1-行向量" class="headerlink" title="1.行向量"></a>1.行向量</h3><ul>
+<li>创建行向量</li>
+</ul>
+<blockquote>
+<p>一：v = [11 12 4 36]</p>
+<p>二：v = 3:1:9 表示从3到9间隔为1. 中间间隔省略的话默认为1</p>
+<p>三：v = linspace(3, 9, 7) 表示从3到9做等差数列，一共7个数</p>
+<p>四：v = logspace(3, 9, 7)表示从10^3开始到10^9做等比数列，一共有7个数</p>
+<p>五：v = [u,v],表示将u向量和v向量组合在一起</p>
+</blockquote>
+<ul>
+<li>索引</li>
+</ul>
+<p>u(a),返回向量u的第a个元素，都是从1开始</p>
+<p>v[a,b]，返回向量v的第a和第b个元素,中括号中可以传多个参数</p>
+<p>v(end)，返回最后一个元素。</p>
+<p>v(end-1), 返回倒数第二个元素</p>
+<p>v(2:end)，返回第2个到最后的元素，切片索引。</p>
+<ul>
+<li>修改</li>
+</ul>
+<p>修改前：v = 3:1:9   修改中：v(2) = -4     修改后：v = 3    -4     5     6     7     8     9</p>
+<p>如果修改超界：如v(10) = 12     修改后：v =3    -4     5     6     7     8     9     0     0    12（没有的位置补零）</p>
+<h3 id="2-列向量"><a href="#2-列向量" class="headerlink" title="2.列向量"></a>2.列向量</h3><ul>
+<li>创建列向量：</li>
+</ul>
+<blockquote>
+<p>一：v = [3; 7; 4]</p>
+<p>二：v = [3, 7, 4]’ 分割的逗号可省去。一撇其实在复数中是共轭转置，如果只是转置的话不是复数的转置的话直接在数组后面加点再加一撇，比如[1, 2, 5].’</p>
+<p>三：v_row([a:b]), 返回行向量，v_col([a, b])，返回列向量</p>
+</blockquote>
+<h3 id="3-矩阵"><a href="#3-矩阵" class="headerlink" title="3.矩阵"></a>3.矩阵</h3><ul>
+<li>创建矩阵</li>
+</ul>
+<blockquote>
+<p>M = [1, 2, 3; 4, 5, 6] 为一个两行三列的数组。 每一行的元素个数必须要相等，否则报错。</p>
+<p>rand(2) 返回一个二维矩阵，切每个元素都是从0到1的随机数</p>
+<p>rand(a, b)或者rand([a, b])  返回一个a行b列的矩阵。</p>
+<p>randi([1, 10], 3, 4)   返回一个三行四列的矩阵，且矩阵每个元素是从1到10的随机整数</p>
+<p>zeros(a)或者zeros(a,b) 全为零的矩阵</p>
+<p>ones(a)或者ones(a, b) 全为1的矩阵</p>
+<p>eye(a)  返回主对角线上全是1的a维方阵</p>
+<p>diag(v) ,v 为向量，返回主对角线上元素是v的元素的n维方阵，且n为v的元素个数，其余位置为0。</p>
+<p>diag(-1:-1：-6, -1) 次对角线上的元素为-1到-6，最后一个-1代表为主对角线下的那个次对角线，如果为1则表示主对角线上的那个次对角线。</p>
+</blockquote>
+<ul>
+<li>访问矩阵</li>
+</ul>
+<p>M(a,b), M(1,1:3), M(1,:),M(:,2),M(:,end)等</p>
+<ul>
+<li>线性下标</li>
+</ul>
+<p>M(a)，返回第a个元素，元素顺序为按列数，然后再按行。（不提倡使用，防止被当成一维数组）</p>
+<ul>
+<li>矩阵可以修改元素</li>
+<li>矩阵的形状和大小</li>
+</ul>
+<p>length(M),返回矩阵行列最大值</p>
+<p>size(M),返回一个数组，为行列</p>
+<p>size_m = size(M), 结果size_m是一个数组</p>
+<p>[n_row, n_col] = size(M)， 结果分别将行列赋值给变量n_row和n_col</p>
+<p>numel(M), 返回矩阵的元素个数，即行乘以列</p>
+<p>zeros(size(M)) 返回一个和M形状一致的全零矩阵</p>
+<p>reshape(M,a,b) 返回一个a行b列的元素，且元素为M的元素，但是两个矩阵的元素个数要保持一致，且都按照列优先进行排序。</p>
+<p>flipud(M),按照行进行翻转，第一行变成最后一行</p>
+<p>filplr(M),按照列进行翻转，第一列变成最后一列</p>
+<p>flip(M)相当于flipud(M)按照行进行翻转，第一行变成最后一行</p>
+<p>rot90(M),逆时针旋转九十度。</p>
+<p>repmat(A, 2, 3) 若A为两行两列，用A变成四行六列矩阵，即重复。</p>
+<p>repelem(A, 2, 3)  将矩阵元素代替，即重复一个元素，一样的元素在一起。</p>
+<p>[] 空矩阵， 零行零列。</p>
+<h3 id="4-向量和矩阵运算"><a href="#4-向量和矩阵运算" class="headerlink" title="4.向量和矩阵运算"></a>4.向量和矩阵运算</h3><p>T 三维矩阵，和二维类似。</p>
+<p>abs(v), 返回数列对应位置的绝对值数列，其他函数类似。</p>
+<p>min(V),max(v),sum(v)，prod(v)</p>
+<p>cumsum(v), 前n个的数求和作为新的数组</p>
+<p>cumprod(v), 前n个的数求乘积作为新的数组</p>
+<p>cummin(v),前n个数的最小值作为新的数组</p>
+<p>cummax(v),前n个数的最大值作为新的数组</p>
+<p>min(M),max(M)对于矩阵求最小、最大值则是求每列上的最小、最大值，返回一个数列，且维度和列数保持一致.</p>
+<p>diff([1 4 7 8 3])  结果为：ans =3     3     1    -5，返回的是后一个和前一个的距离，作差，结果维度比原矩阵少1.</p>
+<p>v加减乘除是数组元素分别进行操作。</p>
+<p>矩阵的加减是对应加减，</p>
+<p>A  .* B，点乘就是两个矩阵相应位置相乘。</p>
+<p>A  ./ B，点除就是两个矩阵相应位置相除。</p>
+<p>A  .^ B, 点乘方是A矩阵对应位置的分别乘以B对应位置的乘方。</p>
+<p>矩阵相乘 略</p>
+<p>矩阵平方是两个矩阵相乘，（前提是符合要求），”.^2”则是对应位置平方，且矩阵可以2.5次方。</p>
+<p>相同元素个数的向量可以相乘，为对应位置相乘。或者行列向量转换为符合要求的维度再相乘。</p>
+<p>向量的差积，cross(V1,V2)，必须为1*3的维度。</p>
+<p>特殊函数矩阵：hilb(a)，pascal(a)，magic(a), </p>
+<p>find(M==1)线性查找某个元素，按照列优先</p>
+<p>ind2sub()把线性矩阵转换为矩阵，返回特定元素位置坐标</p>
+<p>如：ind2dub(size(M), find(M==1))</p>
+<h3 id="5-逻辑数组"><a href="#5-逻辑数组" class="headerlink" title="5.逻辑数组"></a>5.逻辑数组</h3><p>v为数列，u为v &gt; n的逻辑数组</p>
+<p>v &gt; n, 返回一个全为0或1的数列。</p>
+<p>v(u)则会返回逻辑数组对应位置为真值的位置的数据</p>
+<p>v(v&gt;0.5)，返回所有元素大于0.5的元素</p>
+<p>log_true = ones(3, 4, ‘logical’) 返回一个三行四列的全为逻辑真的矩阵</p>
+<p>any(v), 是否有一个为真</p>
+<p>all(v)，是否全部都为真</p>
+<p>find(v)，返回v中为真值的位置</p>
+<p>find(v,1, ‘first’),返回v中第一个元素为真的位置</p>
+<p>isequal(v1,v2)判断两个数组是否相等，如果维度不同直接返回FALSE，而如果使用all(v1==v2)的话，如果维度不同则会报错。</p>
 
-        </div>
-    	 
+    
 
-        <div class="article-info info-on-right">
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin1.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay1.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          zdw
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://zhangdongwei1998.github.io/2021/08/10/MATLAB2-向量和矩阵/" title="" target="_blank">https://zhangdongwei1998.github.io/2021/08/10/MATLAB2-向量和矩阵/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangdongwei1998.github.io/2021/08/10/MATLAB2-%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/08/10/MATLAB3-%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6/" class="archive-article-date">
-        <time datetime="2021-08-10T09:33:15.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2021/08/10/MATLAB3-%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/08/10/MATLAB4-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/08/10/MATLAB2-%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5/" class="archive-article-date">
-        <time datetime="2021-08-10T09:33:15.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
-</a>
-
-        </div>
-    	 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/08/10/MATLAB4-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-        <time datetime="2021-08-10T09:33:15.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
-</a>
-
-        </div>
-    	 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/08/10/MATLAB1-%E5%88%9D%E5%A7%8BMATLAB/" class="archive-article-date">
-        <time datetime="2021-08-10T09:33:15.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
-</a>
-
-        </div>
-    	 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/08/10/MATLAB5-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-        <time datetime="2021-08-10T09:33:15.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
-</a>
-
-        </div>
-    	 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/07/18/%E7%BC%BA%E5%B0%91tables%E4%BE%9D%E8%B5%96%E5%BA%93/" class="archive-article-date">
-        <time datetime="2021-07-18T02:30:38.034Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/07/18/%E7%BC%BA%E5%B0%91tables%E4%BE%9D%E8%B5%96%E5%BA%93/" target="_blank">Python缺少tables依赖库</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/07/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-        <time datetime="2021-07-17T07:54:53.961Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/07/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_blank">正则表达式</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/06/25/Ubuntu%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="archive-article-date">
-        <time datetime="2021-06-25T06:42:11.318Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/06/25/Ubuntu%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" target="_blank">Ubuntu快速入门</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/06/08/typora/" class="archive-article-date">
-        <time datetime="2021-06-08T09:31:07.442Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/06/08/typora/" target="_blank">typora-markdown</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
+
+
 
 
           </div>
@@ -539,8 +532,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

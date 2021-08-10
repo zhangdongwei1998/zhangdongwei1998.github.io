@@ -214,68 +214,40 @@
             
 
   
-    <article id="post-another test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MATLAB6-程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/08/02/another%20test/" target="_blank">another test</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/08/02/another%20test/" class="archive-article-date">
-        <time datetime="2021-08-02T13:48:25.925Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-02</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    <p>你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的<a target="_blank" rel="noopener" href="https://github.com/zhangdongwei1998">GitHub</a>主页。</p>
-<h2 id="简单搭建博客"><a href="#简单搭建博客" class="headerlink" title="简单搭建博客"></a>简单搭建博客</h2><p>这是我第一篇博客，哈哈哈哈，不知道写些什么，那就写一下我搭建博客的过程吧。我参考了 B 站的视频和网上的一些教程，如果不正确请参考一下其他教程。</p>
-<h3 id="第一步：下载-git-和-Node"><a href="#第一步：下载-git-和-Node" class="headerlink" title="第一步：下载 git 和 Node"></a>第一步：下载 git 和 Node</h3><p>git 下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a><br>node 下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-<p>当在命令窗口输入：git –version 时，可查看 git 的版本，如果显示版本号，则 git 安装成功。如下：<br><img src="/picture/2021518/git.png" alt="avatar"></p>
-<p>当在命令窗口输入：node -v 时，可查看 node 的版本，如果显示版本号，则 node 安装成功。如下：<br><img src="/picture/2021518/node.png" alt="avatar"><br>安装过程很简单，几乎只一直点击 next 即可。</p>
-<h3 id="第二步：下载-Hexo"><a href="#第二步：下载-Hexo" class="headerlink" title="第二步：下载 Hexo"></a>第二步：下载 Hexo</h3><p>Hexo 官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br>安装：<br>使用 npm 命令安装 Hexo.在任意位置鼠标右键，选择“Git Bash Here”,打开 git 控制台，输入命令安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
-
-<p>配置：<br>新建博客文件夹，在该文件夹下打开命令窗口，输入一下命令进行初始化配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三步：本地启动-Hexo"><a href="#第三步：本地启动-Hexo" class="headerlink" title="第三步：本地启动 Hexo"></a>第三步：本地启动 Hexo</h3><p>1.输入以下命令进行生成博客。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<p><img src="/picture/2021518/hexog.png" alt="avatar"><br>2.启动本地服务器。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p><img src="/picture/2021518/hexos.png" alt="avatar"></p>
-<p>本地服务器默认端口为 4000，则输入：<a target="_blank" rel="noopener" href="http://localhost:4000/;%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E3%80%82%E6%98%BE%E7%A4%BA%E5%A6%82%E4%B8%8B%EF%BC%9A">http://localhost:4000/;即可看到博客主页。显示如下：</a><br><img src="/picture/2021518/blog1.png" alt="avatar"></p>
-<p>做到以上结果说明你已经完成了一半了，接下来就需要将自己的博客部署到 Github 上了。</p>
-<h3 id="第四步：部署到-Github-上。"><a href="#第四步：部署到-Github-上。" class="headerlink" title="第四步：部署到 Github 上。"></a>第四步：部署到 Github 上。</h3><p>1、申请一个 Github 账号。<br>2、创建一个仓库。<br><img src="/picture/2021518/github1.png" alt="avatar"><br>3、在_config.yml 进行配置。<br><img src="/picture/2021518/config1.png" alt="avatar"><br>repo: 后面是你刚才创建 github 的仓库地址。<br>注意 type：和 repo:的冒号后面要加空格。</p>
-<p><img src="/picture/2021518/config.png" alt="avatar"><br>url: 后面是生成的域名 url，部署后只需在浏览器输入该地址即可访问博客。</p>
-<p>4、安装 hexo-deployer-git 自动部署发布工具。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>5、发布到 github 上。<br>在将博客部署到 github 上之前，你还需要将 SSH Key 添加到 GitHub，该步骤较简单，可参考其他教程。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>在部署的时候需要输入你的 github 账号和密码，请正确输入：<br><img src="/picture/2021518/login.png" alt="avatar"></p>
-<p>部署过程很快，几秒钟即可部署完成。<br><img src="/picture/2021518/deploy.png" alt="avatar"></p>
-<p>6、测试访问。<br>在浏览器输入：<a href="https://zhangdongwei1998.github.io/%E5%8D%B3%E5%8F%AF%E8%AE%BF%E9%97%AE%E5%8D%9A%E5%AE%A2%E4%BA%86%E3%80%82">https://zhangdongwei1998.github.io/即可访问博客了。</a><br><img src="/picture/2021518/test.png" alt="avatar"></p>
-<h3 id="第五步：写博客。"><a href="#第五步：写博客。" class="headerlink" title="第五步：写博客。"></a>第五步：写博客。</h3><p>如果你想写更多博客，则需要在\Hexo\source_posts 文件夹下，新建 markdown 文件就可以写文章了。以后写文章只需要保存、生成、部署即可部署到 github 上了。<br><img src="/picture/2021518/dir.png" alt="avatar"></p>
-<h3 id="第六步：参考博客。"><a href="#第六步：参考博客。" class="headerlink" title="第六步：参考博客。"></a>第六步：参考博客。</h3><p>1、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/189fd945f38f">https://www.jianshu.com/p/189fd945f38f</a><br>2、<a target="_blank" rel="noopener" href="https://blog.csdn.net/linton1/article/details/90137367">https://blog.csdn.net/linton1/article/details/90137367</a></p>
-<h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
+    <h1 id="Chapter6-程序"><a href="#Chapter6-程序" class="headerlink" title="Chapter6-程序"></a>Chapter6-程序</h1><h3 id="1-定义函数"><a href="#1-定义函数" class="headerlink" title="1.定义函数"></a>1.定义函数</h3><ul>
+<li>单输出变量：</li>
+</ul>
+<p>function area = areacirc(rad)</p>
+<ul>
+<li>多输出变量：</li>
+</ul>
+<p>function [area, circum] = areacirc(rad)</p>
+<p>如果用少于返回值的个数去接收，则只返回前几个。</p>
+<p>如果想查看后面的返回值，而不关心前面的返回值则可以使用：[~, c] = areacirc(4),省略前面的。</p>
+<ul>
+<li>没有输出变量的函数</li>
+</ul>
+<p>如fprintf函数。</p>
+<h3 id="2-模块化编程"><a href="#2-模块化编程" class="headerlink" title="2.模块化编程"></a>2.模块化编程</h3><p>可以将多个函数分别封装到每个函数，然后进行调用，可以写在一个脚本中进行调用。</p>
+<h3 id="3-变量作用域"><a href="#3-变量作用域" class="headerlink" title="3.变量作用域"></a>3.变量作用域</h3><ul>
+<li>变量</li>
+</ul>
+<p>在同一工作目录下，在command window和脚本中的变量是可以通用的，但是不能使用定义在脚本中函数内的变量。</p>
+<ul>
+<li>永久变量(persistent)</li>
+</ul>
+<p>使用persistent修饰的变量可以保存变量，当函数关闭后下次打开使用依然是之前的存储的变量，如果想要清除，需要使用clear + 函数名</p>
+<p>不同函数内定义的persistent不同，不会互相干扰。</p>
+<ul>
+<li>全局变量（global）</li>
+</ul>
+<p>使用global修饰的变量是全局变量，在command window定义的可以在脚本或者函数中使用。</p>
+<p>注意：一般不提倡使用global，防止使用混乱。</p>
 
     
 
@@ -291,7 +263,636 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/02/another%20test/">展开全文 >></a>
+      <a class="article-more-a" href="/2021/08/10/MATLAB6-%E7%A8%8B%E5%BA%8F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MATLAB3-脚本文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Chapter3-脚本文件"><a href="#Chapter3-脚本文件" class="headerlink" title="Chapter3-脚本文件"></a>Chapter3-脚本文件</h1><h3 id="1-程序设计过程"><a href="#1-程序设计过程" class="headerlink" title="1.程序设计过程"></a>1.程序设计过程</h3><ul>
+<li>top-down design（自上而下编程）</li>
+</ul>
+<h3 id="2-脚本文件"><a href="#2-脚本文件" class="headerlink" title="2.脚本文件"></a>2.脚本文件</h3><ul>
+<li><p>脚本输出结果</p>
+<ol>
+<li><p>disp(); 如：disp([‘the area of the disc is ‘ num2str(area)]);</p>
+</li>
+<li><p>fprintf(‘the area of the disc is %.3f \n’, area)</p>
+</li>
+<li><p>fprintf(‘%6.2f’, a),保留两位数字，如果超过六位直接输出，未超过则空格，靠右输出，也可以在数字前加负号，表示靠左对齐。</p>
+<p>补充：num2str()将双精度的数字转换为字符串形式,中括号是连接两个变量。</p>
+</li>
+</ol>
+</li>
+<li><p>注释</p>
+<p>1.单行注释：在行开始写%。  多行注释：%{  }%， 花括号内写注释。</p>
+<p>2.注释快捷键：Ctrl+R。    取消注释：Ctrl+T。</p>
+<p>3.脚本前几行和后面的代码分割开，有特殊意义，比如可以在工作区输入help + 脚本名，即可查看前几行代码的注释。</p>
+<p>补充：变量名不要和脚本名一样。</p>
+</li>
+</ul>
+<h3 id="3-语法和功能"><a href="#3-语法和功能" class="headerlink" title="3.语法和功能"></a>3.语法和功能</h3><p>input(). 输入函数，如：rad = input(“Enter the radius:”)，将输入内容赋值给rad。</p>
+<p>​     指定输入格式 ，如： letter = input(“Enter a char:”,”s”), 输入内容以字符格式输入。</p>
+<p>fprintf()，函数中如果想输出一个引号或者斜杠则需要输入两个。</p>
+<h3 id="4-初始画图"><a href="#4-初始画图" class="headerlink" title="4.初始画图"></a>4.初始画图</h3><ul>
+<li>画点：plot(x,y,’r*’)  用星号画出以x为横坐标，y为纵坐标的点,颜色为红色。</li>
+</ul>
+<p>axis([9 12 35 55]);% axis([xmin xmax ymin ymax]) 坐标轴的范围。</p>
+<p>xlabel(‘Time’);ylabel(‘Temperature’)；title(‘Time and Temperature’);分别给坐标轴标记和图像标题</p>
+<ul>
+<li>画线：x =1:6;y =[1 5 3 9 11 8]。plot(x, y，’g’)和plot(y)一样，会默认传入数据为纵坐标,线的颜色为绿色其他设置类似。</li>
+</ul>
+<p>plot(x, y, ‘k:’)可在k后面输入不同的形状从而画出不同样式的线段。</p>
+<p>如果想查看画图工具，在工作区输入help plot即可。</p>
+<p>plot(x,y);plot(x,x+1)；如果定义了两个plot，则只会显示最后一个图。</p>
+<p>hold;即可保存当前画布。</p>
+<p>hold是改变ishold()是否擦画布的状态。故不会连续出现三个画图。</p>
+<p>hold on；维持画布状态。</p>
+<p>hold off；维持画布关闭。</p>
+<p>补充：打断点调试，程序停在断点前。</p>
+<p>figure：figure()开启新的画布，如果没有调用figure（），则在plot（）过程中自动调用一个figure，如果在有figure的基础上创建一个figure，则会激活一个新的figure，操作会在最后创建这个figure，之前的figure是inactive状态。</p>
+<p>clf:clear current figure;清空当前figure。</p>
+<p>cla：清空当前画布。</p>
+<p>subplot(2, 1, 1);划分figure window分为两行一列的画布，选择第一个画布。</p>
+<p>subplot(2, 1, 2);选择第二个画布。</p>
+<p>grid:网格有无的切换，也可以使用grid on()开启和grid off()关闭</p>
+<p>legend(‘line1’,’line2’,’line3’);图例,顺序和画图的顺序一致，显示图例标记。</p>
+<ul>
+<li>条状图</li>
+</ul>
+<p>bar(1:10, randi([1,10],[1,10])); 画出一个条形图（柱状图）。<br>plot(1:0.1:10,sin(1:0.1:10),1:0.1:10,cos(1:0.1:10))；画两条线。</p>
+<h3 id="5-文件的保存与存储"><a href="#5-文件的保存与存储" class="headerlink" title="5.文件的保存与存储"></a>5.文件的保存与存储</h3><h5 id="5-1写文件"><a href="#5-1写文件" class="headerlink" title="5.1写文件"></a>5.1写文件</h5><p>save testfile.dat mymat -ascii   ；</p>
+<p>testfile.dat为文件名， mymat为变量，-ASCII为修饰形式。保存路径为当前路径。</p>
+<p>文件打开可以直接双击，不过需要工具。可以直接右键以text格式打开。</p>
+<p>type testfile.dat；也可以直接用type加上文件名即可以text格式打开文件。</p>
+<p>如果再次写入则会覆盖。</p>
+<h5 id="5-2读文件"><a href="#5-2读文件" class="headerlink" title="5.2读文件"></a>5.2读文件</h5><p>load testfile.dat； testfile.dat为文件名。</p>
+<p>读取完会把其中的变量存储到Workspace中。</p>
+<p>如果读取的变量名和之前原有的变量名重名的话，则会自动覆盖掉之前的变量。</p>
+<h5 id="5-3在文件上累加"><a href="#5-3在文件上累加" class="headerlink" title="5.3在文件上累加"></a>5.3在文件上累加</h5><p>save testfile.dat mymat3 -ascii -append</p>
+<p>append即可完成在之前的文件基础上叠加写入。</p>
+<p>添加的格式如维度可以任意。</p>
+<h3 id="6-用户自定义函数"><a href="#6-用户自定义函数" class="headerlink" title="6.用户自定义函数"></a>6.用户自定义函数</h3><p>类似系统自定义函数：sin(a),abs(a)等，用户可以自定义一些函数。</p>
+<ul>
+<li>定义函数</li>
+</ul>
+<p>例子：function outputargument = functionname(inputArgument)</p>
+<p>其中，function是说明定义的是函数。outputargument是输出变量。functionname是函数名称。inputargument是输入变量。</p>
+<ul>
+<li>函数的使用</li>
+</ul>
+<p>function最后由end进行结尾。</p>
+<p>脚本文件名称最好和函数名称保持一致。</p>
+<p>如果向一个接受一个函数传递一个数组，比如接受一个半径求面积，则可以在计算中的符号加点，比如点乘或者点幂。</p>
+<p>注释：一般接受标量运算的函数也会接受向量的运算。</p>
+<p>可以在函数中使用自己定义的函数。</p>
+<ul>
+<li>函数作用域</li>
+</ul>
+<p>如果使用自己定义的函数时，则函数中的变量不会出现在Base的Workspace中的，因为作用域不同，只能作用于函数内，即本地变量（local variable）。</p>
+<ul>
+<li>自定义函数和脚本的区别（个人简单认识，方便理解）</li>
+</ul>
+<p>脚本只能运行，可以在脚本内定义局部函数，但是不能在全局使用，即如果在commend window中输入定义在脚本中的函数则会报错找不到该函数。而在使用函数时需要传入相应参数，并且把定义好的函数放在工作目录文件夹下，则是相当于一个公共的（同文件目录下）的函数，可以直接使用。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/10/MATLAB3-%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MATLAB2-向量和矩阵" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Chapter2-向量和矩阵"><a href="#Chapter2-向量和矩阵" class="headerlink" title="Chapter2-向量和矩阵"></a>Chapter2-向量和矩阵</h1><h3 id="1-行向量"><a href="#1-行向量" class="headerlink" title="1.行向量"></a>1.行向量</h3><ul>
+<li>创建行向量</li>
+</ul>
+<blockquote>
+<p>一：v = [11 12 4 36]</p>
+<p>二：v = 3:1:9 表示从3到9间隔为1. 中间间隔省略的话默认为1</p>
+<p>三：v = linspace(3, 9, 7) 表示从3到9做等差数列，一共7个数</p>
+<p>四：v = logspace(3, 9, 7)表示从10^3开始到10^9做等比数列，一共有7个数</p>
+<p>五：v = [u,v],表示将u向量和v向量组合在一起</p>
+</blockquote>
+<ul>
+<li>索引</li>
+</ul>
+<p>u(a),返回向量u的第a个元素，都是从1开始</p>
+<p>v[a,b]，返回向量v的第a和第b个元素,中括号中可以传多个参数</p>
+<p>v(end)，返回最后一个元素。</p>
+<p>v(end-1), 返回倒数第二个元素</p>
+<p>v(2:end)，返回第2个到最后的元素，切片索引。</p>
+<ul>
+<li>修改</li>
+</ul>
+<p>修改前：v = 3:1:9   修改中：v(2) = -4     修改后：v = 3    -4     5     6     7     8     9</p>
+<p>如果修改超界：如v(10) = 12     修改后：v =3    -4     5     6     7     8     9     0     0    12（没有的位置补零）</p>
+<h3 id="2-列向量"><a href="#2-列向量" class="headerlink" title="2.列向量"></a>2.列向量</h3><ul>
+<li>创建列向量：</li>
+</ul>
+<blockquote>
+<p>一：v = [3; 7; 4]</p>
+<p>二：v = [3, 7, 4]’ 分割的逗号可省去。一撇其实在复数中是共轭转置，如果只是转置的话不是复数的转置的话直接在数组后面加点再加一撇，比如[1, 2, 5].’</p>
+<p>三：v_row([a:b]), 返回行向量，v_col([a, b])，返回列向量</p>
+</blockquote>
+<h3 id="3-矩阵"><a href="#3-矩阵" class="headerlink" title="3.矩阵"></a>3.矩阵</h3><ul>
+<li>创建矩阵</li>
+</ul>
+<blockquote>
+<p>M = [1, 2, 3; 4, 5, 6] 为一个两行三列的数组。 每一行的元素个数必须要相等，否则报错。</p>
+<p>rand(2) 返回一个二维矩阵，切每个元素都是从0到1的随机数</p>
+<p>rand(a, b)或者rand([a, b])  返回一个a行b列的矩阵。</p>
+<p>randi([1, 10], 3, 4)   返回一个三行四列的矩阵，且矩阵每个元素是从1到10的随机整数</p>
+<p>zeros(a)或者zeros(a,b) 全为零的矩阵</p>
+<p>ones(a)或者ones(a, b) 全为1的矩阵</p>
+<p>eye(a)  返回主对角线上全是1的a维方阵</p>
+<p>diag(v) ,v 为向量，返回主对角线上元素是v的元素的n维方阵，且n为v的元素个数，其余位置为0。</p>
+<p>diag(-1:-1：-6, -1) 次对角线上的元素为-1到-6，最后一个-1代表为主对角线下的那个次对角线，如果为1则表示主对角线上的那个次对角线。</p>
+</blockquote>
+<ul>
+<li>访问矩阵</li>
+</ul>
+<p>M(a,b), M(1,1:3), M(1,:),M(:,2),M(:,end)等</p>
+<ul>
+<li>线性下标</li>
+</ul>
+<p>M(a)，返回第a个元素，元素顺序为按列数，然后再按行。（不提倡使用，防止被当成一维数组）</p>
+<ul>
+<li>矩阵可以修改元素</li>
+<li>矩阵的形状和大小</li>
+</ul>
+<p>length(M),返回矩阵行列最大值</p>
+<p>size(M),返回一个数组，为行列</p>
+<p>size_m = size(M), 结果size_m是一个数组</p>
+<p>[n_row, n_col] = size(M)， 结果分别将行列赋值给变量n_row和n_col</p>
+<p>numel(M), 返回矩阵的元素个数，即行乘以列</p>
+<p>zeros(size(M)) 返回一个和M形状一致的全零矩阵</p>
+<p>reshape(M,a,b) 返回一个a行b列的元素，且元素为M的元素，但是两个矩阵的元素个数要保持一致，且都按照列优先进行排序。</p>
+<p>flipud(M),按照行进行翻转，第一行变成最后一行</p>
+<p>filplr(M),按照列进行翻转，第一列变成最后一列</p>
+<p>flip(M)相当于flipud(M)按照行进行翻转，第一行变成最后一行</p>
+<p>rot90(M),逆时针旋转九十度。</p>
+<p>repmat(A, 2, 3) 若A为两行两列，用A变成四行六列矩阵，即重复。</p>
+<p>repelem(A, 2, 3)  将矩阵元素代替，即重复一个元素，一样的元素在一起。</p>
+<p>[] 空矩阵， 零行零列。</p>
+<h3 id="4-向量和矩阵运算"><a href="#4-向量和矩阵运算" class="headerlink" title="4.向量和矩阵运算"></a>4.向量和矩阵运算</h3><p>T 三维矩阵，和二维类似。</p>
+<p>abs(v), 返回数列对应位置的绝对值数列，其他函数类似。</p>
+<p>min(V),max(v),sum(v)，prod(v)</p>
+<p>cumsum(v), 前n个的数求和作为新的数组</p>
+<p>cumprod(v), 前n个的数求乘积作为新的数组</p>
+<p>cummin(v),前n个数的最小值作为新的数组</p>
+<p>cummax(v),前n个数的最大值作为新的数组</p>
+<p>min(M),max(M)对于矩阵求最小、最大值则是求每列上的最小、最大值，返回一个数列，且维度和列数保持一致.</p>
+<p>diff([1 4 7 8 3])  结果为：ans =3     3     1    -5，返回的是后一个和前一个的距离，作差，结果维度比原矩阵少1.</p>
+<p>v加减乘除是数组元素分别进行操作。</p>
+<p>矩阵的加减是对应加减，</p>
+<p>A  .* B，点乘就是两个矩阵相应位置相乘。</p>
+<p>A  ./ B，点除就是两个矩阵相应位置相除。</p>
+<p>A  .^ B, 点乘方是A矩阵对应位置的分别乘以B对应位置的乘方。</p>
+<p>矩阵相乘 略</p>
+<p>矩阵平方是两个矩阵相乘，（前提是符合要求），”.^2”则是对应位置平方，且矩阵可以2.5次方。</p>
+<p>相同元素个数的向量可以相乘，为对应位置相乘。或者行列向量转换为符合要求的维度再相乘。</p>
+<p>向量的差积，cross(V1,V2)，必须为1*3的维度。</p>
+<p>特殊函数矩阵：hilb(a)，pascal(a)，magic(a), </p>
+<p>find(M==1)线性查找某个元素，按照列优先</p>
+<p>ind2sub()把线性矩阵转换为矩阵，返回特定元素位置坐标</p>
+<p>如：ind2dub(size(M), find(M==1))</p>
+<h3 id="5-逻辑数组"><a href="#5-逻辑数组" class="headerlink" title="5.逻辑数组"></a>5.逻辑数组</h3><p>v为数列，u为v &gt; n的逻辑数组</p>
+<p>v &gt; n, 返回一个全为0或1的数列。</p>
+<p>v(u)则会返回逻辑数组对应位置为真值的位置的数据</p>
+<p>v(v&gt;0.5)，返回所有元素大于0.5的元素</p>
+<p>log_true = ones(3, 4, ‘logical’) 返回一个三行四列的全为逻辑真的矩阵</p>
+<p>any(v), 是否有一个为真</p>
+<p>all(v)，是否全部都为真</p>
+<p>find(v)，返回v中为真值的位置</p>
+<p>find(v,1, ‘first’),返回v中第一个元素为真的位置</p>
+<p>isequal(v1,v2)判断两个数组是否相等，如果维度不同直接返回FALSE，而如果使用all(v1==v2)的话，如果维度不同则会报错。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/10/MATLAB2-%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MATLAB4-判断语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Chapter4-判断语句"><a href="#Chapter4-判断语句" class="headerlink" title="Chapter4-判断语句"></a>Chapter4-判断语句</h1><h3 id="1-判断语句"><a href="#1-判断语句" class="headerlink" title="1.判断语句"></a>1.判断语句</h3><p>if ， if else, elseif, switch.</p>
+<p>注意：if  condition后面不需要引号直接另起一行进行缩进即可。if要和end匹配。</p>
+<p>在commend history中选中语句加shift可以选中多行，然后按enter键运行。</p>
+<p>判断逻辑语句，非零的数字都判断为TRUE。</p>
+<p>error(); 直接可以用以报错的函数。</p>
+<p>switch可以在后面加花括号，然后在花括号内写入多个条件</p>
+<h3 id="2-函数使用"><a href="#2-函数使用" class="headerlink" title="2.函数使用"></a>2.函数使用</h3><p>isletter();用于判断是否为字符，可以传入多个字符，也可传入字符串。</p>
+<p>isempty();判断是否为空。</p>
+<p>isa()；判断是否为某个类型其中一个。比如num = 11;isa(num, ‘int16’)为logical 0，isa(num,’double’)为logical 1。</p>
+<p>iskeyword();用于判断是否为关键字。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/10/MATLAB4-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MATLAB1-初始MATLAB" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Chapter1-初始MATLAB"><a href="#Chapter1-初始MATLAB" class="headerlink" title="Chapter1-初始MATLAB"></a>Chapter1-初始MATLAB</h1><h3 id="1-工具栏的基本使用和工作区使用技巧"><a href="#1-工具栏的基本使用和工作区使用技巧" class="headerlink" title="1.工具栏的基本使用和工作区使用技巧"></a>1.工具栏的基本使用和工作区使用技巧</h3><ul>
+<li><p>当前文件夹为Current Folder, Workspace为工作区存储的内容，command history为运行历史。在工作区直接输入上下键也可调用到历史。也可以输入前几个字母再按上下键可以查看特定的历史。</p>
+</li>
+<li><p>编写一个脚本文件，并保存，便于后期使用。运行的话可以鼠标点击Run按钮，或者直接按F5即可运行该脚本。在工作区直接输入脚本文件名字即可执行。</p>
+</li>
+<li><p>注意：只有在工作区所在的文件目录的脚本输入名字才会直接运行，否则需要切换目录。</p>
+</li>
+<li><p>再工作区输入函数或者变量的前几个字母，按tab键即可自动补全。</p>
+</li>
+</ul>
+<h3 id="2-基本命令"><a href="#2-基本命令" class="headerlink" title="2.基本命令"></a>2.基本命令</h3><ul>
+<li>退出MATLAB基本环境</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quit/exit</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使MATLAB暂停一段时间，单位秒，等待过程中工作栏左下角由ready状态转换为busy状态。停止的话使用ctrl+c.</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pause(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>清空工作区的内容历史</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>清空Workspace历史</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>清除特定的信息</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear 变量名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在工作区输入变量并赋值，直接回车的话会直接运行，如果不想直接输出，则可以在末尾加上分号进行抑制。</p>
+</li>
+<li><p>查看所有变量的名字</p>
+</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看所有变量名字和详细信息</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whos</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看圆周率</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pi</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>格式切换</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">format long </span><br><span class="line">format short </span><br><span class="line">format compact 工作区代码以紧凑显示</span><br><span class="line">format loose 工作区代码以松散形式显示</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>数据强行转换</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">single(a) 强制转换为single形式</span><br><span class="line">double(a) 强制转换为double形式</span><br><span class="line">int8(a)、int16(a)、int32(a) 强制转换为int对应位数</span><br><span class="line">double(&#x27;a&#x27;)、char(27) 强制将数字和字符进行转换</span><br><span class="line">当强制转换超出界限则返回其最值，如int8(200)返回127，int8(-200)返回-128，该现象称为saturation（饱和）</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对应形式最大位数</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">intmax(&#x27;int8&#x27;) 查看int8能表示的最大数字</span><br><span class="line">intmin(&#x27;int16&#x27;) 查看int16能表示的最小数字</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>工作区一行显示不下可以在末尾加“…”即可在下一行继续写</p>
+</li>
+<li><p>查看MATLAB的版本</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ver</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-变量命名"><a href="#3-变量命名" class="headerlink" title="3.变量命名"></a>3.变量命名</h3><ul>
+<li><p>不能以数字开头，可以用字母数字下划线定义变量，且区分大小写。</p>
+</li>
+<li><p>变量的长度有限制，最多为机器上的字长，64位机器的话就是最长长度位63.查看机器字长最长长度使用命令 namelengthmax.</p>
+</li>
+<li><p>变量名最好见明知意，变量名之间使用下划线连接或者驼峰命名方式。</p>
+</li>
+</ul>
+<h3 id="4-数据类型"><a href="#4-数据类型" class="headerlink" title="4.数据类型"></a>4.数据类型</h3><ul>
+<li>double 双精度 64 bit，single 单精度 32 bit</li>
+<li>int带符号形式，uint不带符号形式</li>
+<li>char字符型，单引号包起来</li>
+<li>string字符串，双引号包起来</li>
+<li>bool布尔类型，True正确、False错误</li>
+<li>True、False逻辑类型，TRUE为1， FALSE为0.不等号为“~=”</li>
+</ul>
+<h3 id="5-运算和函数"><a href="#5-运算和函数" class="headerlink" title="5.运算和函数"></a>5.运算和函数</h3><p>加减乘比较简单省略。</p>
+<p>正除号：“/”，如5/2=2.5</p>
+<p>反除号：“\”，如5\2=0.4</p>
+<p>乘方：“^”, 如2^3=8</p>
+<p>科学计算法： “e/E”或者“d/E”， 如3e8=300000000</p>
+<p>运算优先级：略</p>
+<p>数学函数：sin(x),tan(x),cos(x), abs(x)……</p>
+<p>注意：sin(a)是以弧度为单位的，而sind(a)是以角度为单位的</p>
+<p>求平方根</p>
+<blockquote>
+<p>sqrt()</p>
+</blockquote>
+<p>求幂方根</p>
+<blockquote>
+<p>nthroot(2, 3)，求2的开三次方</p>
+</blockquote>
+<p>角度\弧度互相转换</p>
+<blockquote>
+<p>deg2rad(180)=pi, rad2deg(pi)=180</p>
+</blockquote>
+<p>对数函数</p>
+<blockquote>
+<p>log() 以e为底， log2(),以2为底， log10(), 以十为底</p>
+</blockquote>
+<p>指数函数</p>
+<blockquote>
+<p>exp(10) = e^10 , exp(1) = 2.71…   </p>
+</blockquote>
+<p>查看有哪些函数</p>
+<blockquote>
+<p>help elfun</p>
+</blockquote>
+<p>查看具体函数使用方法</p>
+<blockquote>
+<ol>
+<li>help function()</li>
+<li>将鼠标停留在函数上，按F1，弹出函数使用方式</li>
+<li>在工具栏右上角搜索栏输入函数，即可查看使用方法</li>
+</ol>
+</blockquote>
+<h3 id="6-特殊字符和变量"><a href="#6-特殊字符和变量" class="headerlink" title="6.特殊字符和变量"></a>6.特殊字符和变量</h3><ul>
+<li><p>比如function、if、else等为保留字，不能定义为变量。</p>
+</li>
+<li><p>函数名如abs可以作为变量，但是以后就不能再使用作为函数了，而是认为是一个变量。故不推荐使用函数名作为定义变量名。</p>
+</li>
+<li><p>pi为一个常量constant，圆周率。</p>
+</li>
+<li><p>i/j 为虚数，如1+2i.如果i/j已经被定义了，则只能在i前面加一个数字即可，如:i = 1, 如果再想表示成虚数的话如：2+1i.</p>
+</li>
+<li><p>Inf表示为无穷。如1/0=Inf,   -1/0=-Inf</p>
+</li>
+<li><p>NaN. 全称为Not a number.</p>
+</li>
+<li><p>NaN和Inf都可以使用double表示。</p>
+</li>
+</ul>
+<h3 id="7-随机数"><a href="#7-随机数" class="headerlink" title="7. 随机数"></a>7. 随机数</h3><ul>
+<li><p>随机生成一个从0到1的数：rand或者rand().实际为伪随机数。</p>
+</li>
+<li><p>重置MATLAB生成器：rng(a)，a是个整数，否则需要取整，比如传入0.2和0.3结果一样。</p>
+</li>
+<li><p>rng(‘shuffle’) 重置随机数因子。</p>
+</li>
+<li><p>rand()*n，随机生成一个0到n的数。</p>
+</li>
+<li><p>randn()，随机生成一个符合正态分布的数。</p>
+</li>
+<li><p>randi(a), 随机生成一个从0到a的数。rand([a,b]), 随机生成一个从a到b的随机整数。</p>
+</li>
+</ul>
+<h3 id="8-求整和求余"><a href="#8-求整和求余" class="headerlink" title="8.求整和求余"></a>8.求整和求余</h3><p>可以通过help elfun查看最后几个函数</p>
+<ul>
+<li>fix() 向零取整，如fix(-0.2)=0, fix(0.5)=0.</li>
+<li>floor() 向负无穷取整。</li>
+<li>ceil()向正无穷取整。</li>
+<li>round(),取最近的数，四舍五入。也可以保留几位小数，round(a, n)</li>
+<li>mod(),求余。如mod(13, 3),13除以3的余数，为1</li>
+<li>rem()，求余。如rem(13, 3),13除以3的余数，为1</li>
+<li>sign()，取符号函数，整数取1，负数取-1，零取0.</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/10/MATLAB1-%E5%88%9D%E5%A7%8BMATLAB/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MATLAB5-循环语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Chapter5-循环语句"><a href="#Chapter5-循环语句" class="headerlink" title="Chapter5-循环语句"></a>Chapter5-循环语句</h1><h3 id="1-循环语句"><a href="#1-循环语句" class="headerlink" title="1.循环语句"></a>1.循环语句</h3><p>for ……end</p>
+<p>补充：inputnum = NaN(10, 1); 创建一个十行一列的空数组。调用数组是用圆括号，比如inputnum（2）；</p>
+<p>对于循环，向量每次都需要延长，不建议这样，因为效率很低，建议做法是在循环之前就知道向量的大小，就在循环之前进行建立一个那么大的向量，即提前定义变量空间。</p>
+<h3 id="2-画图工具"><a href="#2-画图工具" class="headerlink" title="2.画图工具"></a>2.画图工具</h3><p>subplot(a, b, i);代表一共有a行b列个画图，i代表选择第i个进行操作。</p>
+<p>subplot(2, 2, [2 4])，可以将整个window分为3块，右边为一大块选中。同时和subplot(1, 2, 2)；等价。</p>
+<p>但是画布之间不能相互遮盖，否则不会出现预想结果。</p>
+<h3 id="3-循环嵌套"><a href="#3-循环嵌套" class="headerlink" title="3.循环嵌套"></a>3.循环嵌套</h3><p>for,while略。</p>
+<h3 id="4-编码分块"><a href="#4-编码分块" class="headerlink" title="4.编码分块"></a>4.编码分块</h3><p>可以使用%%开头对编码分割，然后每一块可以点击Run Section只是运行了该代码段落得内容。Run Section的快捷键是Ctrl+enter。</p>
+<p>tic;toc;用以记录程序运行时间。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/10/MATLAB5-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/">展开全文 >></a>
     </p>
     
 
@@ -1335,289 +1936,10 @@
 
 
   
-    <article id="post-BTS-Net" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
   
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/06/08/BTS-Net/" target="_blank">BTS-Net文献学习</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/06/08/BTS-Net/" class="archive-article-date">
-        <time datetime="2021-06-08T01:04:34.747Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的<a target="_blank" rel="noopener" href="https://github.com/zhangdongwei1998">GitHub</a>主页。</p>
-<h2 id="BTS-Net文献学习"><a href="#BTS-Net文献学习" class="headerlink" title="BTS-Net文献学习"></a>BTS-Net文献学习</h2><p>前两天看到群里有同学讲某老师有学硕名额，而我现在还没有找到导师，我报着试试的态度给老师发了一封邮件。和老师取得联系后老师发给我一篇英文文献，让我看完后和老师讲一下。这好像是学校的传统，找导师时都会先看文献然后再面试，老师再决定是否收你为“徒”。虽然最后由于名额限制未能面试进入老师课题组，但是还是挺感谢老师的，文献看了几遍，作为一名即将毕业的本科生，其中的专业名词和实验也看的不是很懂，只看懂了其中的主要思想。虽遗憾未进组，但是还是记录一下自己对这篇文献的认识和收获吧。</p>
-<h3 id="文献"><a href="#文献" class="headerlink" title="文献"></a>文献</h3><p>文献的原文名称为：BTS-NET: BI-DIRECTIONAL TRANSFER-AND-SELECTION NETWORK FOR RGB-D SALIENT OBJECT DETECTION<br>对于深度图像显著目标检测的双向传输和选择网络<br>作者：Wenbo Zhang, Yao Jiang, Keren Fu∗, Qijun Zhao<br>您可以在<a target="_blank" rel="noopener" href="https://xueshu.baidu.com/usercenter/paper/show?paperid=1a2h0g20nk2c02p0b85x0e50yu086727&site=xueshu_se">https://xueshu.baidu.com/usercenter/paper/show?paperid=1a2h0g20nk2c02p0b85x0e50yu086727&amp;site=xueshu_se</a>查看原文。<br>当然也可以从我的<a target="_blank" rel="noopener" href="https://github.com/zhangdongwei1998">GitHub</a>上查看。<br>本文章只用于学习，如果涉及侵权，立刻删除。</p>
-<h3 id="背景摘要"><a href="#背景摘要" class="headerlink" title="背景摘要"></a>背景摘要</h3><p>深度信息已被证明在RGB-D显著目标检测中是有益的。然而，获得的深度图往往质量低且不准确。现有的RGB-D SOD模型大多在其编码器阶段没有跨模态交互或者只有深度到RGB的单向交互，在面对低质量深度时可能导致编码器特征不准确。为了解决这一限制，我们建议在编码器阶段尽早进行渐进的双向交互，产生一个新的双向传输和选择网络，称为BTS-Net，它采用一组双向传输和选择(BTS)模块在编码过程中净化特征。基于由此产生的健壮性编码器特征，该论文还还设计了一个有效的轻量级分组解码器来实现精确的最终显著性预测。在六个广泛使用的数据集上的综合实验表明，在四个关键指标方面，BTS-Net超过了16种最新的最先进的方法。</p>
-<p>显著目标检测旨在定位引起人类视觉注意的图像区域。它在许多计算机视觉任务中很有用，例如，对象分割，跟踪，图像/视频压缩。虽然RGB SOD方法近年来由于深度学习而取得了很大进展，但是它们在具有挑战性的场景中仍然会遇到问题，例如，相似的前景和背景、杂乱/复杂的背景或者低对比度环境。</p>
-<p>随着深度传感器的使用越来越多，RGB-D显著目标检测最近成为一个热门的研究课题。深度图中嵌入的其他有用空间信息在一定程度上有助于克服上述挑战。尽管通过探索跨模态互补性，在这一领域取得了许多进展，但我们注意到现有模型在提取健壮的显著性特征方面仍然不足。</p>
-<h3 id="现有方法"><a href="#现有方法" class="headerlink" title="现有方法"></a>现有方法</h3><p>现存的RGB-D显著目标检测主要分为没有交互的并行独立编码器和单向交互的裁缝-女仆子网络。并行独立编码器分别提取RGB和深度单个特征，然后有下面的编码器处理扩模式融合，如图1（a）.裁缝-女仆子网络将深度线索注入RGB作为指导或增强，然后对结果进行解码，以获得显著图，如图1（b）.上述两种策略可能都忽略了深度图的质量问题，因为无论从深度传感器还是现有数据集获得的深度图，通常都是低质量的噪声。显然，如果输入深度不准确，提取注入的深度特征将容易受到影响，并且可能降低来自解码器的最终显著图。</p>
-<p><img src="/picture/20210608/1.png" alt="avatar"><br>图1</p>
-<h3 id="特点和贡献"><a href="#特点和贡献" class="headerlink" title="特点和贡献"></a>特点和贡献</h3><p>为了解决这个问题，论文建议在编码器的早期，而不是在解码器的后期，进行渐进的双向交互。如图1（c）.<br>特点：<br>编码器中应用了一种新的双向传输和选择模块，使RGB和深度能够相互校正/细化。因此，可以很好地减轻解码器的负担。我们的BTS受到注意机制和交叉注意的启发，它使来自不同模态的特征相互提炼，以获得更少噪声的纯化特征。此外，由于提出的早期交互策略，提取的鲁棒分层特征使我们能够设计有效的轻量级组解码器来生成最终的显著图。<br>贡献：<br>1、提出BTS-Net，这是第一个在编码器阶段引入跨RGB和深度双向交互的RGB-D SOD模型。<br>2、为了实现双向交互，设计了一个基于空间通道注意力的传递选择模块。<br>3、设计了一个有效的轻量级群组解码器，以实现精确的最终预测。</p>
-<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><h4 id="编码器原理"><a href="#编码器原理" class="headerlink" title="编码器原理"></a>编码器原理</h4><p>图2示出了提议的基站网络的框图。它遵循典型的编码器-解码器架构，其中编码器配备有几个BTS(双向传输和选择)模块，以在编码器特征提取期间实施跨模态交互和补偿，从而产生分层模态感知特征。同时，解码器被精心设计用于分组解码和最终显著性预测。具体来说，编码器由一个RGB相关分支、一个深度相关分支和五个BTS模块组成。<br><img src="/picture/20210608/2.png" alt="avatar"><br>图2<br>这两个主分支采用广泛使用的ResNet-50作为主干，引导五个功能层次。前一个BTS模块的相应输出是中级层分支的输入，为了捕捉多尺度语义信息，我们在每个分支的末端添加了ASPP模块。假设五个RGB深度ResNet层次的特征输出被表示为bfim(m ∈ {r, d}, i = 0, …,4).并且来自BTS模块以及ASPPs的增强的交叉模态特征被表示为fim(m∑{ r，d}，i = 0，…,5).我们把fim(m∑{ r，d}，i = 0，1，2)看作低级特征，fim(m∑{ r，d}，i = 3，4，5)看作高级特征，然后把这样的低级/高级特征馈送给后续的轻量级组解码器。在下文中，我们详细描述了所提出的可用于编码器的双向传输选择模块，以及轻型分组解码器。</p>
-<p>双向传输选择模块的详细结构如图3所示，其灵感来自于众所周知的空间信道注意机制。基站有两个处理阶段:双向传输和特征选择。注意，前者基于空间注意，后者与通道注意相关。BTS的基本原理是，首先使用空间注意力能够辨别突出对象的“位置”，然后通道注意力可以选择特征通道来辨别“什么”特征是重要的。具体而言，双向转移阶段执行跨模态注意力转移，即将从任一模态导出的空间注意力图应用于另一模态，如图3所示。由于BTS是以对称方式设计的，为简洁起见，下面我们只阐述将RGB特征转移到深度分支的操作。<br><img src="/picture/20210608/3.png" alt="avatar"><br>图3<br>给定特定层次的RGB特征，我们首先计算其对应的空间注意力图SAr为：<br>SAr= Sigmoid(Convsr(bfr)),<br>其中sigmoid表示Sigmoid激活函数，Convsr表示单通道输出的(3×3，1)卷积层。接下来，产生的空间注意线索SAr被转移到深度，这主要通过元素方式的乘法(由数学符号“×”表示)来实现。在乘法之前，SAris还增加了一个术语SAr×SAd，其中SAdis是深度分支的对应词，以保留特定的情态个性。因此，由RGB信息补偿的深度特征被公式化为:<br>cfd= (SAr+ SAr× SAd) × bfd,<br>其中bfd代表相应的深度特征。在这个阶段之后，每个模态的特征被来自另一个模态的信息在空间上补偿。接下来，沿着通道维度选择所获得的特征，这通过典型的通道关注操作来实现:<br>CAd= Sof tmax(Convcd(GAP(cfd)))<br>fd= CAd× cfd<br>其中如图2和图3所示，fd指示基站输出特征。CAd表示通道权重向量，GAP是全局平均汇集运算，Softmax表示softmax函数，Convcdis是1×1卷积，其输入和输出通道数相等。请注意，在整个传输和选择阶段之后，我们的基站保持信道特征和空间维度。这使得所提出的基站能够以“即插即用”的方式应用于大多数并行独立编码器(图1 (a))。我们还注意到，我们选择不使用广泛采用的剩余注意策略，该策略将关注的特征fd(fr)与原始特征bfd(bfr)相加。这是因为剩余连接可能会限制补充信息的传输范围。相反，我们的设计允许编码器自适应地确定这样的范围。没有这种残余连接，可以获得更多的改善。</p>
-<h4 id="解码器原理"><a href="#解码器原理" class="headerlink" title="解码器原理"></a>解码器原理</h4><p>我们的分组解码器的特点是特征分组和三向监督。众所周知，卷积神经网络的较深特征编码有助于定位物体的高级知识，而较浅特征表征低级边缘细节。我们分组的动机是同级别的特性有更好的兼容性，便于后续解码。因此，在可视化编码器提取的特征后，我们将这12个分层特征大致分为四种类型，即高级RGB特征(fi r，i = 3，4，5)、低级RGB特征(fi r，i = 0，1，2)、高级深度特征(fi d，i = 3，4，5)和低级深度特征(fi d，i = 0，1，2)。在解码过程中，我们首先在每个组内进行特征合并，以节省内存和计算成本。这12个分层特征，由具有不同通道的fi mt表示，首先通过由卷积、BatchNorm和ReLU组成的过程被转换成统一的k通道特征fi mt(实际上k = 256)。这样的过程在图2中用“BConv”表示。然后根据它们的属性将它们分为四种类型，即低级/高级特征和形式，可以定义为:<br><img src="/picture/20210608/4.png" alt="avatar"><br>其中下标m∑{ r，d}表示RGB/深度模态，U p是双线性上采样运算。然后我们利用分组特征fh m，fl m，m∑{ r，d}来预测三个最终的显著图。</p>
-<p>为了实现融合显著性预测Sc，我们通过不同层次上的乘法和加法挖掘跨模态互补性，保证了跨RGB和深度的显式信息融合。然后，不同级别的融合特征被连接并馈送到预测头。上述操作可以总结为:<br><img src="/picture/20210608/5.png" alt="avatar"><br>其中，P是由两个“BConv”、一个(1×1，1)卷积、一个Sigmoid层和一个上采样操作组成的预测头，而[ ]表示串联操作。BConv是前面提到的“BConv”过程。<br>此外，为了提高特征学习效率并避免在BTS中退化，允许两个分支充分发挥它们的作用，我们同时对RGB和深度分支施加额外的监督。两个显著图，即Sr和Sd，是通过使用各自的特征从各个分支生成的:<br><img src="/picture/20210608/6.png" alt="avatar"><br>监督：类似于以前的工作，我们使用标准的交叉熵损失对Sr，Sd和Sc进行三向监管，公式为:<br><img src="/picture/20210608/7.png" alt="avatar"><br>其中Ltotalis是总损失，Lbceis是二进制交叉熵损失，G表示基本事实，λ表示每个监督。λc= 1，λr= λd= 0.5在我们的实验中设定。推理过程中，Sc作为最终的预测结果。</p>
-<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>由于设计到研究生所需要的知识，所以没有看的很懂，固就不再列出。</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>本文献介绍BTS-Net，这是第一个RGB-D SOD模型，它采用了在编码器中使用RGB和深度之间双向交互的思想。为了获得高质量的显著图，提出了一种与编码器协作的轻量组解码器。与SOTA方法的综合比较以及消融实验验证了所提出的双向交互策略、基站模块的内部设计以及组解码器。由于BTS可以以“即插即用”的方式应用，因此在未来使用BTS来增强现有的模型将是有趣的。</p>
-<h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/06/08/BTS-Net/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关闭数据库时错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/06/08/%E5%85%B3%E9%97%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E9%94%99%E8%AF%AF/" target="_blank">关闭数据库时出现错误</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/06/08/%E5%85%B3%E9%97%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E9%94%99%E8%AF%AF/" class="archive-article-date">
-        <time datetime="2021-06-07T23:41:22.313Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的<a target="_blank" rel="noopener" href="https://github.com/zhangdongwei1998">GitHub</a>主页。</p>
-<h2 id="关闭数据库连接资源时出现了MESSAGE-closing-inbound-before-receiving-peer’s-close-notify错误时，解决方案"><a href="#关闭数据库连接资源时出现了MESSAGE-closing-inbound-before-receiving-peer’s-close-notify错误时，解决方案" class="headerlink" title="关闭数据库连接资源时出现了MESSAGE: closing inbound before receiving peer’s close_notify错误时，解决方案"></a>关闭数据库连接资源时出现了MESSAGE: closing inbound before receiving peer’s close_notify错误时，解决方案</h2><p>今天学习JDBC查询数据时，在关闭数据库资源时出现了以下错误：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Tue Jun 08 07:39:58 CST 2021 WARN: Caught <span class="keyword">while</span> disconnecting...</span><br><span class="line"></span><br><span class="line">EXCEPTION STACK TRACE:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">** BEGIN NESTED EXCEPTION ** </span><br><span class="line"></span><br><span class="line">javax.net.ssl.SSLException</span><br><span class="line">MESSAGE: closing inbound before receiving peer<span class="string">&#x27;s close_notify</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">STACKTRACE:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">javax.net.ssl.SSLException: closing inbound before receiving peer&#x27;</span>s close_notify</span><br><span class="line">	at sun.security.ssl.Alert.createSSLException(Alert.java:133)</span><br><span class="line">	at sun.security.ssl.Alert.createSSLException(Alert.java:117)</span><br><span class="line">	at sun.security.ssl.TransportContext.fatal(TransportContext.java:340)</span><br><span class="line">	at sun.security.ssl.TransportContext.fatal(TransportContext.java:296)</span><br><span class="line">	at sun.security.ssl.TransportContext.fatal(TransportContext.java:287)</span><br><span class="line">	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:737)</span><br><span class="line">	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:716)</span><br><span class="line">	at com.mysql.jdbc.MysqlIO.quit(MysqlIO.java:2249)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:4232)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.close(ConnectionImpl.java:1472)</span><br><span class="line">	at com.zdw.test.TestJdbc.main(TestJdbc.java:40)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">** END NESTED EXCEPTION **</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>只需要在链接的url配置信息加上useSSL=false即可，如下：</p>
-<p><img src="/picture/20210608/jdbc2.png" alt="avatar"></p>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>原因是MySQL在高版本需要指明是否进行SSL连接。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   SSL协议提供服务主要： 		</span><br><span class="line">       1）认证用户服务器，确保数据发送到正确的服务器； 　　 .</span><br><span class="line">       2）加密数据，防止数据传输途中被窃取使用；</span><br><span class="line">       3）维护数据完整性，验证数据在传输过程中是否丢失；</span><br><span class="line"></span><br><span class="line">   当前支持SSL协议两层：</span><br><span class="line">   	 	SSL记录协议（SSL Record Protocol）：建立靠传输协议（TCP）高层协议提供数据封装、压缩、加密等基本功能支持</span><br><span class="line">	    SSL握手协议（SSL Handshake Protocol）：建立SSL记录协议用于实际数据传输始前通讯双进行身份认证、协商加密</span><br><span class="line">	    算法、 交换加密密钥等。</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「HeroSongZ」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/qq_42782063/article/details/90714658</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="参考博客。"><a href="#参考博客。" class="headerlink" title="参考博客。"></a>参考博客。</h3><p>1、<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhang6132326/article/details/103722966">https://blog.csdn.net/zhang6132326/article/details/103722966</a><br>2、<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42782063/article/details/90714658">https://blog.csdn.net/qq_42782063/article/details/90714658</a></p>
-<h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/06/08/%E5%85%B3%E9%97%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E9%94%99%E8%AF%AF/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/05/18/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" target="_blank">第一篇博客</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/05/18/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-        <time datetime="2021-05-18T10:04:59.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的<a target="_blank" rel="noopener" href="https://github.com/zhangdongwei1998">GitHub</a>主页。</p>
-<h2 id="简单搭建博客"><a href="#简单搭建博客" class="headerlink" title="简单搭建博客"></a>简单搭建博客</h2><p>这是我第一篇博客，不知道写些什么，那就写一下我搭建博客的过程吧。我参考了 B 站的视频和网上的一些教程，如果不正确请参考一下其他教程。</p>
-<h3 id="第一步：下载-git-和-Node"><a href="#第一步：下载-git-和-Node" class="headerlink" title="第一步：下载 git 和 Node"></a>第一步：下载 git 和 Node</h3><p>git 下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a><br>node 下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-<p>当在命令窗口输入：git –version 时，可查看 git 的版本，如果显示版本号，则 git 安装成功。如下：<br><img src="/picture/2021518/git.png" alt="avatar"></p>
-<p>当在命令窗口输入：node -v 时，可查看 node 的版本，如果显示版本号，则 node 安装成功。如下：<br><img src="/picture/2021518/node.png" alt="avatar"><br>安装过程很简单，几乎只一直点击 next 即可。</p>
-<h3 id="第二步：下载-Hexo"><a href="#第二步：下载-Hexo" class="headerlink" title="第二步：下载 Hexo"></a>第二步：下载 Hexo</h3><p>Hexo 官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br>安装：<br>使用 npm 命令安装 Hexo.在任意位置鼠标右键，选择“Git Bash Here”,打开 git 控制台，输入命令安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
-
-<p>配置：<br>新建博客文件夹，在该文件夹下打开命令窗口，输入一下命令进行初始化配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三步：本地启动-Hexo"><a href="#第三步：本地启动-Hexo" class="headerlink" title="第三步：本地启动 Hexo"></a>第三步：本地启动 Hexo</h3><p>1.输入以下命令进行生成博客。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<p><img src="/picture/2021518/hexog.png" alt="avatar"><br>2.启动本地服务器。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p><img src="/picture/2021518/hexos.png" alt="avatar"></p>
-<p>本地服务器默认端口为 4000，则输入：<a target="_blank" rel="noopener" href="http://localhost:4000/;%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E3%80%82%E6%98%BE%E7%A4%BA%E5%A6%82%E4%B8%8B%EF%BC%9A">http://localhost:4000/;即可看到博客主页。显示如下：</a><br><img src="/picture/2021518/blog1.png" alt="avatar"></p>
-<p>做到以上结果说明你已经完成了一半了，接下来就需要将自己的博客部署到 Github 上了。</p>
-<h3 id="第四步：部署到-Github-上。"><a href="#第四步：部署到-Github-上。" class="headerlink" title="第四步：部署到 Github 上。"></a>第四步：部署到 Github 上。</h3><p>1、申请一个 Github 账号。<br>2、创建一个仓库。<br><img src="/picture/2021518/github1.png" alt="avatar"><br>3、在_config.yml 进行配置。<br><img src="/picture/2021518/config1.png" alt="avatar"><br>repo: 后面是你刚才创建 github 的仓库地址。<br>注意 type：和 repo:的冒号后面要加空格。</p>
-<p><img src="/picture/2021518/config.png" alt="avatar"><br>url: 后面是生成的域名 url，部署后只需在浏览器输入该地址即可访问博客。</p>
-<p>4、安装 hexo-deployer-git 自动部署发布工具。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>5、发布到 github 上。<br>在将博客部署到 github 上之前，你还需要将 SSH Key 添加到 GitHub，该步骤较简单，可参考其他教程。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>在部署的时候需要输入你的 github 账号和密码，请正确输入：<br><img src="/picture/2021518/login.png" alt="avatar"></p>
-<p>部署过程很快，几秒钟即可部署完成。<br><img src="/picture/2021518/deploy.png" alt="avatar"></p>
-<p>6、测试访问。<br>在浏览器输入：<a href="https://zhangdongwei1998.github.io/%E5%8D%B3%E5%8F%AF%E8%AE%BF%E9%97%AE%E5%8D%9A%E5%AE%A2%E4%BA%86%E3%80%82">https://zhangdongwei1998.github.io/即可访问博客了。</a><br><img src="/picture/2021518/test.png" alt="avatar"></p>
-<h3 id="第五步：写博客。"><a href="#第五步：写博客。" class="headerlink" title="第五步：写博客。"></a>第五步：写博客。</h3><p>如果你想写更多博客，则需要在\Hexo\source_posts 文件夹下，新建 markdown 文件就可以写文章了。以后写文章只需要保存、生成、部署即可部署到 github 上了。<br><img src="/picture/2021518/dir.png" alt="avatar"></p>
-<h3 id="第六步：参考博客。"><a href="#第六步：参考博客。" class="headerlink" title="第六步：参考博客。"></a>第六步：参考博客。</h3><p>1、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/189fd945f38f">https://www.jianshu.com/p/189fd945f38f</a><br>2、<a target="_blank" rel="noopener" href="https://blog.csdn.net/linton1/article/details/90137367">https://blog.csdn.net/linton1/article/details/90137367</a></p>
-<h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/05/18/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
