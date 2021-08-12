@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zhangdongwei1998.github.io">
-  <title>MATLAB(6) | Hexo</title>
+  <title>MATLAB(8) | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的GitHub主页。 Chapter6-程序1.定义函数 单输出变量：  function area &#x3D; areacirc(rad)  多输出变量：  function [area, circum] &#x3D; areacirc(rad) 如果用少于返回值的个数去接收，则只返回前几个。 如果">
+  <meta name="description" content="你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的GitHub主页。 Chapter8-数据结构1.元胞（cell） 元胞数组  {23, ‘a’, 1:2:9, “hello”} &#x3D; cell array  {[23]}    {‘a’}    {1×5 double}    {[“hello”]}; 使用cell可以保存多种类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MATLAB(6)">
-<meta property="og:url" content="https://zhangdongwei1998.github.io/2021/08/10/MATLAB6-%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:title" content="MATLAB(8)">
+<meta property="og:url" content="https://zhangdongwei1998.github.io/2021/08/12/MATLAB8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的GitHub主页。 Chapter6-程序1.定义函数 单输出变量：  function area &#x3D; areacirc(rad)  多输出变量：  function [area, circum] &#x3D; areacirc(rad) 如果用少于返回值的个数去接收，则只返回前几个。 如果">
+<meta property="og:description" content="你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的GitHub主页。 Chapter8-数据结构1.元胞（cell） 元胞数组  {23, ‘a’, 1:2:9, “hello”} &#x3D; cell array  {[23]}    {‘a’}    {1×5 double}    {[“hello”]}; 使用cell可以保存多种类">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-08-10T09:33:15.534Z">
-<meta property="article:modified_time" content="2021-08-10T09:52:25.549Z">
+<meta property="article:published_time" content="2021-08-12T13:55:06.586Z">
+<meta property="article:modified_time" content="2021-08-12T13:57:36.645Z">
 <meta property="article:author" content="zdw">
 <meta name="twitter:card" content="summary">
   
@@ -211,14 +211,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MATLAB6-程序" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MATLAB8-数据结构" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      MATLAB(6)
+      MATLAB(8)
     </h1>
   
 
@@ -230,8 +230,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2021/08/10/MATLAB6-%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-        <time datetime="2021-08-10T09:33:15.534Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
+<a href="/2021/08/12/MATLAB8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
+        <time datetime="2021-08-12T13:55:06.586Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-12</time>
 </a>
 
   
@@ -244,7 +244,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">430字</span>
+      <span class="post-count">1.4k字</span>
     </span>
   </span>
 
@@ -253,7 +253,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -265,35 +265,157 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>你好! 欢迎来到我的博客！我是一名在校学生，如果你对相关技术感兴趣或者有什么问题，请和我多多交流，一起进步。 这是我的<a target="_blank" rel="noopener" href="https://github.com/zhangdongwei1998">GitHub</a>主页。</p>
-<h1 id="Chapter6-程序"><a href="#Chapter6-程序" class="headerlink" title="Chapter6-程序"></a>Chapter6-程序</h1><h3 id="1-定义函数"><a href="#1-定义函数" class="headerlink" title="1.定义函数"></a>1.定义函数</h3><ul>
-<li>单输出变量：</li>
+<h1 id="Chapter8-数据结构"><a href="#Chapter8-数据结构" class="headerlink" title="Chapter8-数据结构"></a>Chapter8-数据结构</h1><h3 id="1-元胞（cell）"><a href="#1-元胞（cell）" class="headerlink" title="1.元胞（cell）"></a>1.元胞（cell）</h3><ul>
+<li>元胞数组</li>
 </ul>
-<p>function area = areacirc(rad)</p>
+<p>{23, ‘a’, 1:2:9, “hello”} = cell array  {[23]}    {‘a’}    {1×5 double}    {[“hello”]};</p>
+<p>使用cell可以保存多种类型的数据，如果使用数组保存的话，如果有字符串就会被全部以字符串进行保存，不能保留其原始类型。</p>
 <ul>
-<li>多输出变量：</li>
+<li>元胞矩阵</li>
 </ul>
-<p>function [area, circum] = areacirc(rad)</p>
-<p>如果用少于返回值的个数去接收，则只返回前几个。</p>
-<p>如果想查看后面的返回值，而不关心前面的返回值则可以使用：[~, c] = areacirc(4),省略前面的。</p>
+<p>{23, ‘a’; 1:2:9, “hello”} = 2×2 cell array {[      23]}    {‘a’      } {1×5 double}    {[“hello”]};</p>
+<p>cell(3, 4);  生成三行四列的空元胞，每个都是0*0 double.</p>
+<h3 id="2-元胞基本操作"><a href="#2-元胞基本操作" class="headerlink" title="2.元胞基本操作"></a>2.元胞基本操作</h3><h5 id="2-1-访问"><a href="#2-1-访问" class="headerlink" title="2.1 访问"></a>2.1 访问</h5><ul>
+<li>元胞数组</li>
+</ul>
+<p>cellvec{2} = ‘a’；访问元胞向量的第2个元胞内容。</p>
+<p>注意：cellvec(2) = {‘a’}；圆括号取出的是第2个元胞，包括“{}”.</p>
 <ul>
-<li>没有输出变量的函数</li>
+<li>元胞矩阵</li>
 </ul>
-<p>如fprintf函数。</p>
-<h3 id="2-模块化编程"><a href="#2-模块化编程" class="headerlink" title="2.模块化编程"></a>2.模块化编程</h3><p>可以将多个函数分别封装到每个函数，然后进行调用，可以写在一个脚本中进行调用。</p>
-<h3 id="3-变量作用域"><a href="#3-变量作用域" class="headerlink" title="3.变量作用域"></a>3.变量作用域</h3><ul>
-<li>变量</li>
+<p>cellmat{2, 3};访问元胞矩阵第2行第3列元胞的内容。</p>
+<p>同理，cellvec{end}、切片访问都可以，但是要注意接收变量的个数。</p>
+<h5 id="2-2-内置函数"><a href="#2-2-内置函数" class="headerlink" title="2.2 内置函数"></a>2.2 内置函数</h5><p>类似，cell也有一些内置函数，比如size(),length()等。</p>
+<p>例：连接strjoin(str, ‘ ‘).</p>
+<blockquote>
+<p>name_char = {‘zdw’, ‘hello’, ‘world’}</p>
+<p>strjoin(name_char)  ans = ‘zdw hello world’</p>
+</blockquote>
+<p>拆分strsplit(str, ‘ ‘)</p>
+<p>iscellstr(name_str) = logical 1;</p>
+<p>判断是否为字符型cell.</p>
+<h5 id="2-3-修改"><a href="#2-3-修改" class="headerlink" title="2.3 修改"></a>2.3 修改</h5><ul>
+<li>删除一个cell</li>
 </ul>
-<p>在同一工作目录下，在command window和脚本中的变量是可以通用的，但是不能使用定义在脚本中函数内的变量。</p>
+<p>cellvec(2) = [];删除元胞数组中第二个cell，那么cell的个数减1.</p>
+<p>注意：如果使用cellvec{2} = []；  相当于把第二个cell内的元素删去，而原来的cell还在，为0*0 double类型。</p>
+<p>矩阵同理。</p>
 <ul>
-<li>永久变量(persistent)</li>
+<li>转换</li>
 </ul>
-<p>使用persistent修饰的变量可以保存变量，当函数关闭后下次打开使用依然是之前的存储的变量，如果想要清除，需要使用clear + 函数名</p>
-<p>不同函数内定义的persistent不同，不会互相干扰。</p>
+<blockquote>
+<p>string({“aa”, “df”, “dfdsa”}) ans = 1×3 string array     “aa”    “df”    “dfdsa”；</p>
+</blockquote>
+<p>可以把cell类型转化为string的类型。</p>
+<blockquote>
+<p> cellstr([“sadf”, “dsfe”, “eot”]) ans = 1×3 cell array {‘sadf’}    {‘dsfe’}    {‘eot’}；</p>
+</blockquote>
+<p>同理，可以把string类型转化为cell类型。</p>
+<h3 id="3-数据结构（data-structure）"><a href="#3-数据结构（data-structure）" class="headerlink" title="3.数据结构（data structure）"></a>3.数据结构（data structure）</h3><ul>
+<li>定义：</li>
+</ul>
+<p>package = struct(‘item_no’, 123, ‘cost’, 19.9, ‘price’, 39.95, ‘code’, ‘g’)</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package = </span><br><span class="line">  struct with fields:</span><br><span class="line"></span><br><span class="line">    item_no: <span class="number">123</span></span><br><span class="line">       cost: <span class="number">19.9000</span></span><br><span class="line">      price: <span class="number">39.9500</span></span><br><span class="line">       code: <span class="string">&#x27;g&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>class(package)  ans = ‘struct’</p>
 <ul>
-<li>全局变量（global）</li>
+<li>访问</li>
 </ul>
-<p>使用global修饰的变量是全局变量，在command window定义的可以在脚本或者函数中使用。</p>
-<p>注意：一般不提倡使用global，防止使用混乱。</p>
+<p>例如：package.item_no = 123</p>
+<p>补：结构由field：字段和value：值组成。</p>
+<p>也可以直接使用点来创建结构，比如struct1.id = 1,即可默认struct1为结构类型，后续可以继续添加内容。</p>
+<ul>
+<li>复制</li>
+</ul>
+<p>newpack = package;   即可将package复制给newpack.</p>
+<ul>
+<li>删除</li>
+</ul>
+<p>rmfield(package, ‘field’);  即可删除结构的字段，返回一个新的struct，如果想在原来的struct上进行删除，则还需要重新赋值给原struct.</p>
+<h5 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h5><p>isstruct(package)；  用于判断package是否为一个struct类型。</p>
+<p>isfield(package, ‘field’)；  用于判断package中是否有field这个字段。</p>
+<p>fieldnames(package);    返回package中的所有字段。</p>
+<h5 id="struct数组"><a href="#struct数组" class="headerlink" title="struct数组"></a>struct数组</h5><ul>
+<li>定义</li>
+</ul>
+<p>packages(1) = struct(‘item_no’, 123, ‘cost’, 19.9, ‘price’, 39.5, ‘code’, ‘g’);</p>
+<p>packages(2) = struct(‘item_no’, 456, ‘cost’, 5.99, ‘price’, 49.9, ‘code’, ‘l’);</p>
+<p>packages(3) = struct(‘item_no’, 589, ‘cost’, 11.11, ‘price’, 33.33, ‘code’, ‘v’);</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">packages</span><br><span class="line">packages = </span><br><span class="line">  <span class="number">1</span>×<span class="number">3</span> struct array with fields:</span><br><span class="line">    item_no</span><br><span class="line">    cost</span><br><span class="line">    price</span><br><span class="line">    code</span><br></pre></td></tr></table></figure>
+
+<p>注：struct数组上的所有字段都必须相同，否则修改一个就会都改变struct字段。这种按照顺序进行添加内存分配需要每次添加，故效率较低，如果知道最大的值，可以开始就先申请最大的，即：</p>
+<p>packages(3) = struct(‘item_no’, 589, ‘cost’, 11.11, ‘price’, 33.33, ‘code’, ‘v’);</p>
+<p>这样默认就会最少为3个struct了，访问前面话，由于没有赋值，故字段上的值都为空。</p>
+<ul>
+<li>访问</li>
+</ul>
+<ol>
+<li>可以使用for循环:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for i = 1:n</span><br><span class="line">	fprintf(&#x27;%f \n&#x27;, packages(i).field);</span><br><span class="line">end	</span><br></pre></td></tr></table></figure>
+
+<p>也可以：</p>
+<blockquote>
+<p>fprintf(‘%f \n’, packages(1).field, packages(2).field, packages(3).field)</p>
+</blockquote>
+<p>不过比较麻烦。</p>
+<p>所以也可以：</p>
+<blockquote>
+<p>fprintf(‘%f \n’, packages.field)</p>
+</blockquote>
+<p>上述被称为：comma-separated list 即：逗号分隔的列表</p>
+<p>[b1, b2, b3] = deal(a1, a2, a3);</p>
+<p>deal()函数专门用于comma-separated list进行变量赋值。</p>
+<ul>
+<li>保存变量</li>
+</ul>
+<p>save(‘packages_saved’, ‘packages’);  将packages的变量保存在当前文件目录packages_saved文件中，便于发送给别人。</p>
+<ul>
+<li>field为数组</li>
+</ul>
+<p>student(3) = struct(‘name’, ‘Brownnose, Violet’, ‘id_no’, 332, ‘quiz’, [7.5, 6.0, 8.5, 7.5])； 其中quiz为数组形式。</p>
+<p>查找：student(1).quiz(1)；第一个同学的第一门成绩，其他类似。</p>
+<h4 id="struct嵌套"><a href="#struct嵌套" class="headerlink" title="struct嵌套"></a>struct嵌套</h4><p>lineseg = struct(‘endpoint1’, struct(‘x’, 2, ‘y’, 4), ‘endpoint’, struct(‘x’, 1, ‘y’, 6))； 保存一个线段。</p>
+<p>查询，例：lineseg.endpoint1.x = 2;</p>
+<h3 id="4-其他的一些数据结构"><a href="#4-其他的一些数据结构" class="headerlink" title="4.其他的一些数据结构"></a>4.其他的一些数据结构</h3><h5 id="categorical数组"><a href="#categorical数组" class="headerlink" title="categorical数组"></a>categorical数组</h5><p>cell类型：icecream_cell = {‘Vanilla’, ‘Chocolate’, ‘Chocolate’, ‘Rum Raisin’, ‘Strawberry’, ‘Rocky Road’}</p>
+<p>将cell类型数据转化为categorical类型：</p>
+<blockquote>
+<p>icecream_cell = categorical(icecream_cell)   icecream_cell =  1×6 categorical array<br>Vanilla      Chocolate      Chocolate      Rum Raisin      Strawberry      Rocky Road </p>
+</blockquote>
+<p>即把字符串分别用数字表示，当使用到某些字符串时再讲数字转化为原来的字符串，例：（ordinal：TRUE为排序关系）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">A = [3,2;3,3;3,2;2,1;3,2];</span><br><span class="line">valueset = [1:3];</span><br><span class="line">catnames = &#123;&#x27;child&#x27;,&#x27;adult&#x27;,&#x27;senior&#x27;&#125;;</span><br><span class="line">B = categorical(A,valueset,catnames,&#x27;Ordinal&#x27;,true)</span><br><span class="line">结果为：</span><br><span class="line">B = </span><br><span class="line">  5×2 categorical array</span><br><span class="line">     senior      adult  </span><br><span class="line">     senior      senior </span><br><span class="line">     senior      adult  </span><br><span class="line">     adult       child  </span><br><span class="line">     senior      adult  </span><br></pre></td></tr></table></figure>
+
+<h5 id="Table"><a href="#Table" class="headerlink" title="Table"></a>Table</h5><ul>
+<li>实例：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">names = &#123;&#x27;Harry&#x27;,&#x27;Sally&#x27;,&#x27;Jose&#x27;&#125;;</span><br><span class="line">weights = [185;133;211];</span><br><span class="line">heights = [74;65.4;72.2];</span><br><span class="line">patients = table(weights,heights,&#x27;RowNames&#x27;,names)</span><br><span class="line">结果：</span><br><span class="line">patients =</span><br><span class="line">  3×2 table</span><br><span class="line">             weights    heights</span><br><span class="line">             _______    _______</span><br><span class="line">    Harry      185         74  </span><br><span class="line">    Sally      133       65.4  </span><br><span class="line">    Jose       211       72.2  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>table选择：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> patients(1:2, 1)</span><br><span class="line">ans =</span><br><span class="line">  2×1 table</span><br><span class="line">             weights</span><br><span class="line">             _______</span><br><span class="line">    Harry      185  </span><br><span class="line">    Sally      133  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>table查询：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">patients(&#x27;Harry&#x27;,:)</span><br><span class="line">ans =</span><br><span class="line">  1×2 table</span><br><span class="line">             weights    heights</span><br><span class="line">             _______    _______</span><br><span class="line">    Harry      185        74  </span><br></pre></td></tr></table></figure>
+
+<h3 id="5-排序"><a href="#5-排序" class="headerlink" title="5.排序"></a>5.排序</h3><ul>
+<li>sort(vec);</li>
+</ul>
+<p>对数组进行排序。</p>
+<p>sort(vec, ‘descend’); 递减排序；</p>
+<p>sort(vec, ‘ascend’);  递增排序；</p>
+<ul>
+<li>排序和位置</li>
+</ul>
+<p>[w_sorted, i_sorted] = sort([vec]);</p>
+<p>w_sorted返回的是一个值的排序数组，而i_sorted返回的是排序后的之前位置的数组。</p>
+<ul>
+<li>其他sort函数</li>
+</ul>
+<p>sortrows(vec, ‘field’); 可以使用一个函数即可根据field对vec列表进行排序。</p>
+<p>issortedrows(vec, ‘field’);  判断该vec列表是否是根据field进行排序的。</p>
 <h5 id="作者的话"><a href="#作者的话" class="headerlink" title="作者的话"></a>作者的话</h5><p>我是一枚在校学习的小菜鸡，这是我的第一篇博客，内容写的比较粗略、简单，如果有错误的地方请多多包涵，也希望你能够提出更多宝贵意见和建议。</p>
 
     
@@ -341,7 +463,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://zhangdongwei1998.github.io/2021/08/10/MATLAB6-程序/" title="MATLAB(6)" target="_blank">https://zhangdongwei1998.github.io/2021/08/10/MATLAB6-程序/</a>
+          <a href="https://zhangdongwei1998.github.io/2021/08/12/MATLAB8-数据结构/" title="MATLAB(8)" target="_blank">https://zhangdongwei1998.github.io/2021/08/12/MATLAB8-数据结构/</a>
         </li>
         
         <li>
@@ -408,7 +530,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangdongwei1998.github.io/2021/08/10/MATLAB6-%E7%A8%8B%E5%BA%8F/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zhangdongwei1998.github.io/2021/08/12/MATLAB8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -423,18 +545,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/08/12/MATLAB8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/08/12/MATLAB7-%E5%AD%97%E7%AC%A6%E7%9A%84%E5%A4%84%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          MATLAB(8)
+          MATLAB(7)
         
       </div>
     </a>
   
   
-    <a href="/2021/08/10/MATLAB3-%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MATLAB(3)</div>
+    <a href="/2021/08/10/MATLAB6-%E7%A8%8B%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MATLAB(6)</div>
       <i class="icon-circle-right"></i>
     </a>
   
